@@ -12,7 +12,46 @@ const ngopermissionSchema = new mongoose.Schema({
     reasons:{
         type:String,
         required:true
-    }
+    },
+    directorname:{
+        type:String
+    },
+    gender:{
+        type:String
+    },
+    website:{
+        type:String
+    },
+    address:{
+        type:String
+    },
+    state:{
+        type:String
+    },
+    category:{
+        type:String
+    },
+    othercategory:{
+        type:String
+    },
+    years:{
+        type:Number
+    },
+    people:{
+        type:Number
+    },
+    name:{
+        type:String
+    },
+    phone:{
+        type:String
+    },
+    emailid:{
+        type:String
+    },
+    links:[{
+        type:String
+    }]
 })
 
 

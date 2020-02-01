@@ -11,7 +11,7 @@ const ngodetailsSchema = new mongoose.Schema({
         required:true
     },
     website:{
-        type:String
+        type:String,
     },
     address:{
         type:String,
@@ -29,10 +29,20 @@ const ngodetailsSchema = new mongoose.Schema({
         type:String
     },
     years:{
-        type:Number
+        type:Number,
+        validate(value){
+            if(value<0){
+                throw new Error("Years can't be negative");
+            }
+        }
     },
     people:{
-        type:Number
+        type:Number,
+        validate(value){
+            if(value<0){
+                throw new Error("Numbers can't be negative");
+            }
+        }
     },
     name:{
         type:String

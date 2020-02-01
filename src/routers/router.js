@@ -26,7 +26,7 @@ router.post('/signup', async(req,res)=> {
     }
 })
 
-router.post('/modal', async(req,res)=>{
+router.post('/details', async(req,res)=>{
   console.log("modal: ",req.body);
   const details = new NGODETAILS(req.body);
   console.log("details-b4",details);
@@ -46,7 +46,15 @@ router.post('/modal', async(req,res)=>{
 
 router.post('/permission', async(req,res)=> {
   console.log(req.body);
-  
+  const permission = new NGOPERMISSION(req.body);
+  try {
+    await permission.save();
+    res.render("portfolio",{
+      ngo:permission
+    })
+  } catch (error) {
+    res.send(error);
+  }
 })
 
 
