@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const NGO = require('../models/ngo');
 const NGODETAILS = require('../models/ngodetails');
+const NGOPERMISSION = require('../models/ngopermission');
 
 // const initializePassport = require('./passport-config')
 
@@ -41,6 +42,11 @@ router.post('/modal', async(req,res)=>{
   } catch (error) {
     res.send(error)
   }
+})
+
+router.post('/permission', async(req,res)=> {
+  console.log(req.body);
+  
 })
 
 
