@@ -18,7 +18,7 @@
 					<button type="button" class="toggle-btn" onclick="login()"><b>Log In</b></button>
 					<button type="button" class="toggle-btn" onclick="register()"><b>Sign Up</b></button>
 					</div>
-				<form class="login100-form validate-form in" id="login">
+				<form class="login100-form validate-form in" id="login" method="POST" action="/ngo/login">
 					<div class="wrap-input100 validate-input m-b-23">
 						<span class="label-input100">Email Id</span>
 						<input class="input100" type="email" name="emailid" placeholder="Type your email">
@@ -68,7 +68,9 @@
 						</a>
 					</div>
 				</form>
-					<form class="login100-form validate-form in" id="register">
+
+
+					<form class="login100-form validate-form in" id="register" method="POST" action="/ngo/signup">
 					<div class="wrap-input100 validate-input m-b-10">
 						<span class="label-input100">Email Id</span>
 						<input class="input100" type="email" name="emailid" placeholder="Type your email">
