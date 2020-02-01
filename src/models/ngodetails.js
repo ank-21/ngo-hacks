@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const ngodetailSchema = new mongoose.Schema({
-    organizationName:{
-        type:String,
-        required:true
-    },
     organize:{
         type:String,
         required:true

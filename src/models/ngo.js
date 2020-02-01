@@ -3,6 +3,10 @@ const validator = require('validator');
 const bcrypt = require('bcryptjs');
 
 const ngoSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
     emailid:{
         type:String,
         required:true,
