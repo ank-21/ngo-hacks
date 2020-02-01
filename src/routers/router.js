@@ -28,6 +28,8 @@ router.post('/signup', async(req,res)=> {
 router.post('/modal', async(req,res)=>{
   console.log("modal: ",req.body);
   const details = new NGODETAILS(req.body);
+  console.log("details-b4",details);
+  
   try {
     await details.save();
 
@@ -37,7 +39,7 @@ router.post('/modal', async(req,res)=>{
     })
     
   } catch (error) {
-    res.render("error")
+    res.send(error)
   }
 })
 
