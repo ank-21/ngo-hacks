@@ -8,6 +8,20 @@
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style>
+			#message{
+			font-size:0.9rem;
+			font-family:sans-serif;
+			line-height:1.2;
+			letter-spacing:1px;
+			margin-top:-5px;
+		}
+		.disabled
+        {
+            background: none repeat scroll 0 0 gray;
+            cursor: default !important;
+        }
+	</style>
 </head>
 <body>
 	<div class="limiter">
@@ -21,13 +35,13 @@
 				<form class="login100-form validate-form in" id="login" method="POST" action="/ngo/login">
 					<div class="wrap-input100 validate-input m-b-23">
 						<span class="label-input100">Email Id</span>
-						<input class="input100" type="email" name="emailid" placeholder="Type your email">
+						<input class="input100" type="email" name="emailid" placeholder="Type your email" required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="password" placeholder="Type your password">
+						<input class="input100" type="password" name="password" placeholder="Type your password" required>
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -48,7 +62,7 @@
 							Forgot Password
 						</a>
 					</div>
-					<hr class="break">
+					<!-- <hr class="break">
 					<div class="txt1 text-center p-t-25 p-b-20">
 						<span>
 							Login With
@@ -66,41 +80,41 @@
 						<a href="#" class="login100-social-item bg2" style="font-size:35px;" title="OTP">
 							<i class="fa fa-mobile" aria-hidden="true"></i>
 						</a>
-					</div>
+					</div> -->
 				</form>
 
 
 					<form class="login100-form validate-form in" id="register" method="POST" action="/ngo/signup">
 					<div class="wrap-input100 validate-input m-b-10">
 						<span class="label-input100">Email Id</span>
-						<input class="input100" type="email" name="emailid" placeholder="Type your email">
+						<input class="input100" type="email" name="emailid" placeholder="Type your email" required>
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-10">
 						<span class="label-input100">Phone Number</span>
-						<input class="input100" type="text" name="phone" placeholder="Type your phone number">
+						<input class="input100" type="text" name="phone" placeholder="Type your phone number" required>
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-10">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="password" placeholder="Type your password">
+						<input class="input100" id="password" type="password" name="password" placeholder="Type your password" required>
 						<span class="focus-input100"></span>
 					</div>
-					<div class="wrap-input100 validate-input" style="margin-bottom:23px">
+					<div class="wrap-input100 validate-input" style="margin-bottom:5px">
 						<span class="label-input100">Confirm Password</span>
-						<input class="input100" type="password" name="confirmPassword" placeholder="Confirm Password">
+						<input class="input100" id="confirm_password" type="password" name="confirmPassword" placeholder="Confirm Password" required>
 						<span class="focus-input100"></span>
 					</div>
-					
-					<div class="container-login100-form-btn" style="margin-bottom:23px">
+					<span id='message'></span>
+					<div class="container-login100-form-btn" style="margin-bottom: 23px;margin-top: 20px;">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" id="signup">
 								SignUp
 							</button>
 						</div>
 					</div>
-					<hr class="break">
+					<!-- <hr class="break">
 					<div class="txt1 text-center p-t-25 p-b-20">
 						<span>
 							SignUp With
@@ -119,7 +133,7 @@
 						<a href="#" class="login100-social-item bg2" style="font-size:35px;" title="OTP">
 							<i class="fa fa-mobile" aria-hidden="true"></i>
 						</a>
-					</div>
+					</div> -->
 				</form>
 			</div>
 		</div>
@@ -153,5 +167,16 @@
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
+		<script>
+		$('#password, #confirm_password').on('keyup', function () {
+    if ($('#password').val() == $('#confirm_password').val() || $('#password').val() === "") {
+        $('#signup').removeClass('disabled');
+         $('#message').html('');
+    } else{
+        $('#message').html('Passwords are not matching').css('color', 'red');
+        $('#signup').addClass('disabled');
+    }
+});
+	</script>
 </body>
 </html>
