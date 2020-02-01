@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/style-main.css">
         <link rel="stylesheet" type="text/css" href="css/util.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-    <style>
+  <style>
         .marquee {
          width: 100vw;
          margin: 0 auto;
@@ -106,7 +106,7 @@
                         </ul>
                     </div> -->
                     <div class="ngo-name">
-                    <h1>undefined</h1>
+                    <h1>{{ngo.name}}</h1>
                     <br>
                     <!-- <p style="width:80%">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, inventore eveniet! Maiores, doloremque eius esse quae quis veniam obcaecati modi!
@@ -115,9 +115,9 @@
                 </div>
 
                 <ul class="personal-info col-md-8 col-sm-12">
-                    <li><label>Name</label><span>Tim Wilson</span></li>
-                    <li><label>Email</label><span class="word-wrap" style="text-transform: none;">ngo.emailid</span></li>
-                    <li><label>Phone</label><span>ngo.phone</span></li>
+                    <li><label>Name</label><span>{{ngo.name}}</span></li>
+                    <li><label>Email</label><span class="word-wrap" style="text-transform: none;">{{ngo.emailid}}</span></li>
+                    <li><label>Phone</label><span>{{ngo.phone}}</span></li>
                 </ul>
             </div>
 
@@ -155,21 +155,38 @@
                <div class="row no-margin">
                   <div class="col-md-12 no-padding bg-color-left">
                      <div class="left-name bg-color-1">
-                        <h2>Tim<span class="text-color">Wilson</span></h2>
+                        <h2>Tim</h2>
                         <h5>creative designer</h5>
-                        <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed</p>
                      </div>
                      <div class="left-address">
                         <ul>
-                           <li><span class="text-color">Phone no</span>97836277882</li>
-                           <li><span class="text-color">address</span>Dermis India J-219, Saket New Delhi -110017.</li>
-                           <li><span class="text-color">EMAIL US</span>info@dermisindia.com</li>
+                            <li><span class="text-color">Name</span>{{ngo.name}}</li>
+                           <li><span class="text-color">Mobile Number</span>{{ngo.phone}}</li>
+                           
+                           <li><span class="text-color">EMAIL ID</span>{{ngo.emailid}}</li>
                         </ul>
                      </div>
                      <div class="ex-heading loader">
-                        <h2>EXEPIRIENCE</h2>
+                        <h2>Details</h2>
                      </div>
-                     <div class="ex-box">
+                     <div class="left-address">
+                        <ul>
+                            <li><span class="text-color">Organize</span>{{ngo.name}}</li>
+                           <li><span class="text-color">Category</span>{{ngo.phone}}</li>
+                           
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Reasons for organising</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                           <li><span class="text-color">Years Operated</span>{{ngo.phone}}</li>
+                           <li><span class="text-color">No. of Associated People</span>{{ngo.phone}}</li>
+                           <li><span class="text-color">Social Media Links</span><a>{{ngo.phone}}</a></li>
+                           
+                        </ul>
+                     </div>
+                     <!-- <div class="ex-box">
                         <h2>2010-2012</h2>
                         <h4>PROJECT MANAGER</h4>
                         <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print</p>
@@ -188,7 +205,7 @@
                         <h2>2010-2012</h2>
                         <h4>PROJECT MANAGER</h4>
                         <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print</p>
-                     </div>
+                     </div> -->
                      <div class="ex-box" style="margin-bottom:5%;">
                       <button type="button" class="btn send-style" data-toggle="modal" data-target="#exampleModal">Add Details</button>
                       <button type="button" class="btn send-style">Seek Permission</button>
@@ -204,12 +221,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
-            <div class="form-group wrap-input100 validate-input m-b-23">
-              <label for="years-operated" class="col-form-label label-input100">Organization Name</label>
-            <input type="text" class="form-control input100" name="organizationName" required>
-            <span class="focus-input100"></span>
-          </div>
+        <form method="POST" action="/ngo/modal">
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="Organizing" class="col-form-label label-input100">Organize</label>
             <select class="form-control input100" id="selected" name="organize" onchange="disableOrganize()" required>
@@ -244,12 +256,12 @@
           </div>
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="years-operated" class="col-form-label label-input100">Years Operated</label>
-            <input type="text" class="form-control input100" name="years">
+            <input type="number" class="form-control input100" name="years">
             <span class="focus-input100"></span>
           </div>
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="message-text" class="col-form-label label-input100">No. Of associated people</label>
-            <input type="text" class="form-control input100" name="people">
+            <input type="number" class="form-control input100" name="people">
             <span class="focus-input100"></span>
           </div>
           <div id="room_fileds">
@@ -265,7 +277,7 @@
     <div class="btn-center">
           <button type="submit" class="btn send-style">Save</button>
     </div>
-        </form>
+    </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -531,7 +543,7 @@
                 <ul id="portfolio-list">
                     <li class="illustration print col-md-3">
                         <a href="" class="folio">
-                            <img src="img/work3.jpg" alt="">
+                            <img src="/img/work3.jpg" alt="">
                             <!-- <h2 class="title">Hey There!!!</h2>
                             <span class="categorie">Print/Illustration</span> -->
                         </a>
@@ -539,7 +551,7 @@
 
                     <li class="webdesign  col-md-3">
                         <a href="" class="folio">
-                            <img src="img/3-thumb.jpg" alt="">
+                            <img src="/img/3-thumb.jpg" alt="">
                             <!-- <h2 class="title">Snow Time!!!</h2>
                             <span class="categorie">Web Design</span> -->
                         </a>
@@ -547,7 +559,7 @@
 
                     <li class="photography col-md-2">
                         <a href="" class="folio">
-                            <img src="img/2-thumb.jpg" alt="">
+                            <img src="/img/2-thumb.jpg" alt="">
                             <!-- <h2 class="title">Help Us.</h2>
                             <span class="categorie">Photography</span> -->
                         </a>
@@ -555,14 +567,14 @@
 
                     <li class="animation print col-md-2">
                         <a href="" class="folio">
-                            <img src="img/4-thumb.jpg" alt="">
+                            <img src="/img/4-thumb.jpg" alt="">
                            <!--  <h2 class="title">Sunshine</h2>
                             <span class="categorie">Print/Animation</span> -->
                         </a>
                     </li>
                     <li class="animation col-md-2">
                         <a href="" class="folio">
-                            <img src="img/5-thumb.jpg" alt="">
+                            <img src="/img/5-thumb.jpg" alt="">
                           <!--   <h2 class="title">Come together</h2>
                             <span class="categorie">Animation</span> -->
                         </a>
@@ -570,7 +582,7 @@
 
                     <li class="webdesign print col-md-2">
                         <a href="" class="folio">
-                            <img src="img/6-thumb.jpg" alt="">
+                            <img src="/img/6-thumb.jpg" alt="">
                            <!--  <h2 class="title">The yellow</h2>
                             <span class="categorie">WebDesign / PRINT</span> -->
                         </a>
@@ -578,7 +590,7 @@
 
                     <li class="photography col-md-2">
                         <a href="" class="folio">
-                            <img src="img/7-thumb.jpg" alt="">
+                            <img src="/img/7-thumb.jpg" alt="">
                        <!--      <h2 class="title">Black-bird</h2>
                             <span class="categorie">Photography</span> -->
                         </a>
@@ -587,7 +599,7 @@
                     
                     <li class="illustration col-md-2">
                         <a href="" class="folio">
-                            <img src="img/8-thumb.jpg" alt="">
+                            <img src="/img/8-thumb.jpg" alt="">
                             <!-- <h2 class="title">Revolution</h2>
                             <span class="categorie">Illustration</span> -->
                         </a>

@@ -140,9 +140,17 @@ h6{font-family: 'Oswald', sans-serif!important;}
     top: 0px;
 }
 .left-address span {
-    width: 84px;
+    width: 14vw;
     display: inline-block;
     text-transform: uppercase;
+}
+@media (max-width:768px)
+{
+    .left-address span {
+    width: 25vw;
+ /*   display: inline-block;*/
+    text-transform: uppercase;
+}
 }
 .ex-heading h2 {
     background: #cf455c;
