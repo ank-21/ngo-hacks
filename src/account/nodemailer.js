@@ -2,7 +2,9 @@ var nodemailer = require('nodemailer')
 
 const keys = require('../auth/keys')
 
-const sendEmailToGovt = () => {
+const sendEmailToGovt = ({permission}) => {
+console.log("permission",permission);
+
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -13,7 +15,7 @@ var transporter = nodemailer.createTransport({
   });
   
   var mailOptions = {
-    from: 'ankitsrivastava21345@gmail.com',
+    from: 'permission.emailid',
     to: `${hostEmail}`,
     subject:`Innovacer Meeting`,
     html:`<p>Application Number : ${applicationNo}</p> <p>Visitor Name : ${visitorName}</p> <p>Visitor Email Id : ${visitorEmail}</p>  <p>Visitor Phone Number : ${PhoneNumber}</p> <p>Check-in Time : ${checkInTime}</p>`

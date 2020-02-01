@@ -1,6 +1,8 @@
 const express = require('express');
 // const passport = require('passport');
 const router = express.Router();
+const {sendEmailToGovt} = require('../account/nodemailer');
+//const {sendWelcomeMessage} = require('../account/send_sms');
 const NGO = require('../models/ngo');
 const NGODETAILS = require('../models/ngodetails');
 const NGOPERMISSION = require('../models/ngopermission');
@@ -49,6 +51,9 @@ router.post('/permission', async(req,res)=> {
   const permission = new NGOPERMISSION(req.body);
   try {
     await permission.save();
+
+    sendEmailToGovt({permission})       //mail sent to host
+    //sendWelcomeMessage(docs.applicationNo,docs.visitorName,docs.visitorEmail,docs.visitorPhnNo,docs.hostPhnNo,docs.checkInTime)
     res.render("portfolio",{
       ngo:permission
     })

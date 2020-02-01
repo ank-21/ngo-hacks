@@ -21,14 +21,14 @@ const ngopermissionSchema = new mongoose.Schema({
                 throw new Error("Years can't be negative");
             }
         }
-    }
+    },
     directorname:{
         type:String
     },
     date:{
         type:Date,
         default:Date.now
-    }
+    },
     gender:{
         type:String
     },
