@@ -50,6 +50,9 @@ const ngopermissionSchema = new mongoose.Schema({
     years:{
         type:Number
     },
+    registrationid:{
+        type:String,
+    }
     people:{
         type:Number
     },
