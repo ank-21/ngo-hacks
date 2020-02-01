@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const ngodetailSchema = new mongoose.Schema({
+const ngodetailsSchema = new mongoose.Schema({
     organize:{
         type:String,
         required:true
@@ -28,5 +28,5 @@ const ngodetailSchema = new mongoose.Schema({
 })
 
 
-const ngo = mongoose.model('ngo',ngoSchema);
-module.exports = ngo;
+const ngodetails = mongoose.model('ngodetails',ngodetailsSchema);
+module.exports = ngodetails;

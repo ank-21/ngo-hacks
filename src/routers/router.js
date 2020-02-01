@@ -2,6 +2,8 @@ const express = require('express');
 // const passport = require('passport');
 const router = express.Router();
 const NGO = require('../models/ngo');
+const NGODETAILS = require('../models/ngodetails');
+
 // const initializePassport = require('./passport-config')
 
 // initializePassport(
@@ -21,6 +23,22 @@ router.post('/signup', async(req,res)=> {
     } catch (error) {
         res.render("error");
     }
+})
+
+router.post('/modal', async(req,res)=>{
+  console.log("modal: ",req.body);
+  const details = new NGODETAILS(req.body);
+  try {
+    await details.save();
+
+    console.log("detail ",details);
+    res.render("portfolio",{
+      details
+    })
+    
+  } catch (error) {
+    res.render("error")
+  }
 })
 
 
