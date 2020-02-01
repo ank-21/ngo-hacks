@@ -35,7 +35,7 @@ router.post('/modal', async(req,res)=>{
 
     console.log("detail ",details);
     res.render("portfolio",{
-      details
+      ngo:details
     })
     
   } catch (error) {

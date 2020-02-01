@@ -26,6 +26,15 @@ const ngodetailsSchema = new mongoose.Schema({
     people:{
         type:Number
     },
+    name:{
+        type:String
+    },
+    phone:{
+        type:String
+    },
+    emailid:{
+        type:String
+    },
     links:[{
         type:String
     }]

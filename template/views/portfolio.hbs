@@ -165,7 +165,7 @@
                <div class="row no-margin">
                   <div class="col-md-12 no-padding bg-color-left">
                      <div class="left-name bg-color-1">
-                        <h2>Tim</h2>
+                        <h2>{{ngo.name}}</h2>
                         <h5>creative designer</h5>
                      </div>
                      <div class="left-address">
@@ -181,8 +181,22 @@
                      </div>
                      <div class="left-address"  style="padding-right:3%;">
                         <ul>
-                            <li><span class="text-color">Organize</span>{{ngo.organize}}</li>
-                           <li><span class="text-color">Category</span>{{ngo.category}}</li>
+                            <li><span class="text-color">Organize</span>
+                            {{!-- {{#if {{ngo.organize}}=="Others"}}
+                              {{ngo.otherorganize}} --}}
+                            {{ngo.organize}}
+                            {{!-- {{else}}
+                            {{ngo.organize}}
+                            {{/if}} --}}
+                            </li>
+                           <li><span class="text-color">Category</span>
+                           {{!-- {{#if {{ngo.category=="Others"}}
+                              {{ngo.othercategory}} --}}
+                            {{ngo.category}}
+                            {{!-- {{else}}
+                            {{ngo.category}}
+                            {{/if}} --}}
+                           </li>
                            
                            <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Reasons for organising</span>{{ngo.reasons}}</li>
                            <li><span class="text-color">Years Operated</span>{{ngo.years}}</li>
@@ -191,6 +205,13 @@
                         </ul>
                      </div>
                      <!-- <div class="ex-box">
+
+                        {{#if event}}
+				<a href="" id="printPDF" target="_blank" style="color: #000;">Print Document</a>
+			{{else}}
+				<a href="/register/views/pdf/workshop" target="_blank" style="color: #000;">Print Document</a>
+			{{/if}}
+
                         <h2>2010-2012</h2>
                         <h4>PROJECT MANAGER</h4>
                         <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print</p>
