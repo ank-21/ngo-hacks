@@ -18,7 +18,18 @@ var transporter = nodemailer.createTransport({
     from: permission.emailid,
     to: keys.auth.govtemail,
     subject:`Responses of NGO for ${permission.category}`,
-    html:`<p>Application Number : ${applicationNo}</p> <p>Visitor Name : ${visitorName}</p> <p>Visitor Email Id : ${visitorEmail}</p>  <p>Visitor Phone Number : ${PhoneNumber}</p> <p>Check-in Time : ${checkInTime}</p>`
+    html:`<p>Registration Id : ${permission.registrationid}</p>
+          <p>Name of the NGO : ${permission.name}</p>
+          <p>Project Proposals : ${permission.reason}</p>
+          <p>Organize : ${permission.organize}</p>
+          <p>Email Id : ${permission.emailid}</p>
+          <p>Board of Director Name : ${permission.directorname}</p>
+          <p>Gender : ${permission.gender}</p>
+          <p>Address of office : ${permission.address}</p>
+          <p>State : ${permission.state}</p>
+          <p>Years Operated : ${permission.years}</p>
+          <p>No. of people associated : ${permission.people}</p>
+          <p>Date : ${permission.date}</p>`
   };
   console.log("mailOptions : " ,mailOptions);
   
