@@ -54,11 +54,16 @@
       margin-left:2%;
       font-weight:bolder;
     }
-    .send-style{
+    .send-style,.send-style-mid{
       background:#cf455c;
       color:white;
     }
-    .send-style:hover{
+    .send-style-mid{
+      margin:0 auto;
+      display:flex;
+      justify-content:center;
+    }
+    .send-style:hover,.send-style-mid:hover{
       color:white;
     }
     .btn-center{
@@ -137,13 +142,13 @@
                         <a href="#profile" class="tab-profile active"><i><i class="fa fa-user"></i></i>PROFILE</a>
                     </li>
                     <li class="tmenu">
-                        <a href="#resume" ><i><i class="fa fa-wpexplorer"></i></i>DETAILS</a>
+                        <a href="#resume" ><i><i class="fa fa-info-circle"></i></i>DETAILS</a>
                     </li>
                     <li class="tmenu">
-                        <a href="#portfolio" ><i><i class="fa fa-eercast"></i></i>PERMISSIONS</a>
+                        <a href="#portfolio" ><i><i class="fa fa-check-circle"></i></i>PERMISSIONS</a>
                     </li>    
                     <li class="tmenu">    
-                        <a href="#contact" ><i><i class="fa fa-telegram"></i></i>INBOX</a>
+                        <a href="#contact" ><i><i class="fa fa-envelope"></i></i>INBOX</a>
                     </li>
                 </ul>
             </nav>
@@ -166,7 +171,7 @@
                   <div class="col-md-12 no-padding bg-color-left">
                      <div class="left-name bg-color-1">
                         <h2>{{ngo.name}}</h2>
-                        <h5>{{ngo.category}}</h5>
+                        <h5>Category:<span class="text-color">{{ngo.category}}</span></h5>
                      </div>
                      <div class="left-address">
                         <ul>
@@ -190,7 +195,7 @@
                         </ul>
                      </div>
                      <div class="ex-box" style="margin-bottom:5%;">
-                      <button type="button" class="btn send-style" data-toggle="modal" data-target="#exampleModal">Edit Details</button>
+                      <button type="button" class="btn send-style-mid" data-toggle="modal" data-target="#exampleModal">Edit Details</button>
                       <!-- <button type="button" class="btn send-style">Seek Permission</button> -->
                     </div>
 
@@ -204,7 +209,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="/ngo/modal">
+        <form method="POST" action="/ngo/details">
           <div class="form-group">
             <input type="text" class="form-control" name="name" value="{{ngo.name}}" hidden>
           </div>
@@ -349,7 +354,7 @@
                   <div class="col-md-12 no-padding bg-color-left">
                      <div class="left-name bg-color-1">
                         <h2>{{ngo.name}}</h2>
-                        <h5>{{ngo.category}}</h5>
+                        <h5>Category: <span class="text-color">{{ngo.category}}</span></h5>
                      </div>
                      <div class="left-address">
                         <ul>
@@ -364,8 +369,11 @@
                      </div>
                      <div class="left-address"  style="padding-right:3%;">
                         <ul>
-                            <li><span class="text-color">Organize</span>
+                            <li  id="organizedetails"><span class="text-color">Organize</span>
                             {{ngo.organize}}
+                            </li>
+                            <li id="otherorganizedetails"><span class="text-color">Organize</span>
+                            {{ngo.otherorganize}}
                             </li>
                            <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Reasons for organising</span>{{ngo.reasons}}</li>
                            <li><span class="text-color">Date Of Organizing</span>
@@ -374,7 +382,7 @@
                         </ul>
                      </div>
                      <div class="ex-box" style="margin-bottom:5%;">
-                      <button type="button" class="btn send-style" data-toggle="modal" data-target="#exampleModal1">Edit Details</button>
+                      <button type="button" class="btn send-style" data-toggle="modal" data-target="#exampleModal1">Edit Permission Details</button>
                       <button type="button" class="btn send-style">Seek Permission</button>
                     </div>
 
@@ -461,17 +469,32 @@
 });
   </script>
    <script>
-      /*function disableOrganize(){
-        var y = document.getElementById("textarea1");
-        var p = document.getElementById("selected").selectedIndex;
-        var strUser = document.getElementsByTagName("option")[p].value;
+    var organize = document.querySelector("#selected").selectedIndex;
+    var str = document.querySelectorAll("#selected option")[organize].value;
+    var otherOrganize = document.querySelector("#textarea1");
+    var organizedetails = document.querySelector("#organizedetails");
+    var otherorganizedetails = document.querySelector("#otherorganizedetails");
+    if(str === "" || str === "Others"){
+      organizedetails.style.display = "none";
+      otherorganizedetails.style.display = "block";
+    }
+    else{
+      otherorganizedetails.style.display = "none";
+      organizedetails.style.display = "block";
+    }
+  </script>
+   <script>
+      function disableOrganize(){
+        var a = document.querySelector("#textarea1");
+        var b = document.querySelector("#selected").selectedIndex;
+        var str = document.querySelectorAll("#selected option")[b].value;
         console.log(strUser);
-        if(strUser === "Others")
-          y.disabled = false;
+        if(str === "Others")
+          a.disabled = false;
         else
-          y.disabled = true;
+          a.disabled = true;
 
-    };*/
+    };
   </script>
   <script>
      function Category(){

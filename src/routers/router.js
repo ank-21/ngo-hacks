@@ -25,8 +25,8 @@ router.post('/signup', async(req,res)=> {
     }
 })
 
-router.post('/modal', async(req,res)=>{
-  console.log("modal: ",req.body);
+router.post('/details', async(req,res)=>{
+  console.log("details: ",req.body);
   const details = new NGODETAILS(req.body);
   console.log("details-b4",details);
   
