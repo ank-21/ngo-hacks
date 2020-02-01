@@ -230,7 +230,7 @@
       </div>
       <div class="modal-body">
         <form method="POST" action="/ngo/modal">
-           <div class="form-group">
+          <div class="form-group">
             <input type="text" class="form-control" name="name" value="{{ngo.name}}" hidden>
           </div>
           <div class="form-group">
@@ -238,6 +238,66 @@
           </div>
           <div class="form-group">
             <input type="text" class="form-control" name="emailid" value="{{ngo.emailid}}" hidden>
+          </div>
+           <div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="directorname" class="col-form-label label-input100">Name of Board Of Director</label>
+            <input type="text" class="form-control input100" name="directorname" required>
+            <span class="focus-input100"></span>
+          </div>
+          <div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="Organizing" class="col-form-label label-input100">Gender</label>
+            <select class="form-control input100" name="gender" required>
+              <option value=""></option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="office-address" class="col-form-label">Office Address</label>
+            <textarea class="form-control text-class" name="officeaddress" required></textarea>
+          </div>
+          <div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="Organizing" class="col-form-label label-input100">State</label>
+            <select class="form-control input100" name="state" required>
+              <option></option>
+              <option>Andaman and Nicobar Islands</option>
+              <option>Andhra Pradesh</option>
+              <option>Arunachal Pradesh</option>
+              <option>Assam</option>
+              <option>Bihar</option>
+              <option>Chandigarh</option>
+              <option>Chhattisgarh</option>
+              <option>Dadra and Nagar Haveli</option>
+              <option>Delhi</option>
+              <option>Goa</option>
+              <option>Gujarat</option>
+              <option>Haryana</option>
+              <option>Himachal Pradesh</option>
+              <option>Jammu and Kashmir</option>
+              <option>Jharkhand</option>
+              <option>Karnataka</option>
+              <option>Kerala</option>
+              <option>Ladakh</option>
+              <option>Lakshadweep</option>
+              <option>Madhya Pradesh</option>
+              <option>Maharashtra</option>
+              <option>Manipur</option>
+              <option>Meghalaya</option>
+              <option>Mizoram</option>
+              <option>Nagaland</option>
+              <option>Odisha</option>
+              <option>Puducherry</option>
+              <option>Punjab</option>
+              <option>Rajasthan</option>
+              <option>Sikkim</option>
+              <option>Tamil Nadu</option>
+              <option>Telangana</option>
+              <option>Tripura</option>
+              <option>Uttar Pradesh</option>
+              <option>Uttarakhand</option>
+              <option>West Bengal</option>
+            </select>
           </div>
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="Organizing" class="col-form-label label-input100">Organize</label>
@@ -251,7 +311,7 @@
           </div>
           <div class="form-group">
             <label for="other-organizing" class="col-form-label label-input100">Others(please specify)</label>
-            <textarea class="form-control text-class" id="textarea1" name="otherorganizing"></textarea>
+            <textarea class="form-control text-class" name="otherorganize" id="textarea1"></textarea>
           </div>
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="Category" class="col-form-label label-input100">Category</label>
@@ -266,7 +326,7 @@
           </div>
           <div class="form-group">
             <label for="other-category" class="col-form-label">Others(please specify)</label>
-            <textarea class="form-control text-class" id="textarea2" name="othercategory"></textarea>
+            <textarea class="form-control text-class" name="othercategory" id="textarea2"></textarea>
           </div>
           <div class="form-group">
             <label for="other-organizing" class="col-form-label">Reasons for Organizing</label>
@@ -280,6 +340,11 @@
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="message-text" class="col-form-label label-input100">No. Of associated people</label>
             <input type="number" class="form-control input100" name="people">
+            <span class="focus-input100"></span>
+          </div>
+          <div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="website" class="col-form-label label-input100">Website</label>
+            <input type="url" class="form-control input100" name="website">
             <span class="focus-input100"></span>
           </div>
           <div id="room_fileds">

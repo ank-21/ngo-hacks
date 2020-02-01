@@ -2,12 +2,24 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const ngodetailsSchema = new mongoose.Schema({
-    organize:{
+    directorname:{
+        type:String,
+        required: true
+    },
+    gender:{
         type:String,
         required:true
     },
-    otherorganize:{
+    website:{
         type:String
+    },
+    address:{
+        type:String,
+        required: true
+    }
+    state:{
+        type:String,
+        required: true
     },
     category:{
         type:String,
@@ -15,10 +27,6 @@ const ngodetailsSchema = new mongoose.Schema({
     },
     othercategory:{
         type:String
-    },
-    reasons:{
-        type:String,
-        required:true
     },
     years:{
         type:Number
