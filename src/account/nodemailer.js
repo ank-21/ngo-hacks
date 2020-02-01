@@ -15,9 +15,9 @@ var transporter = nodemailer.createTransport({
   });
   
   var mailOptions = {
-    from: 'permission.emailid',
-    to: `${hostEmail}`,
-    subject:`Innovacer Meeting`,
+    from: permission.emailid,
+    to: keys.auth.govtemail,
+    subject:`Responses of NGO for ${permission.category}`,
     html:`<p>Application Number : ${applicationNo}</p> <p>Visitor Name : ${visitorName}</p> <p>Visitor Email Id : ${visitorEmail}</p>  <p>Visitor Phone Number : ${PhoneNumber}</p> <p>Check-in Time : ${checkInTime}</p>`
   };
   console.log("mailOptions : " ,mailOptions);
