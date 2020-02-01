@@ -358,6 +358,7 @@
                      </div>
                      <div class="left-address">
                         <ul>
+                            <li><span class="text-color">Registration Id</span>{{ngo.registrationid}}</li>
                             <li><span class="text-color">Name Of the NGO</span>{{ngo.name}}</li>
                            <li><span class="text-color">Mobile Number</span>{{ngo.phone}}</li>
                            
@@ -384,10 +385,15 @@
                             </li>
                         </ul>
                      </div>
-                     <div class="ex-box" style="margin-bottom:5%;">
-                      <button type="button" class="btn send-style-mid" data-toggle="modal" data-target="#exampleModal1">Edit Permission Details</button>
-                      <button type="button" class="btn send-style-mid">Seek Permission</button>
+                     <div class="ex-box container" style="margin-bottom:5%;">
+                      <div class="row">
+                        <div class="col-md-3"></div>
+                      <button type="button" class="btn send-style-mid col-md-3" data-toggle="modal" data-target="#exampleModal1">Edit Permission Details</button>
+                      <div class="col-md-1"></div>
+                      <button type="button" class="btn send-style-mid col-md-3">Seek Permission</button>
+                      <div class="col-md-2"></div>
                     </div>
+                  </div>
 
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
