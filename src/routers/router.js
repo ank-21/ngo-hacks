@@ -55,7 +55,7 @@ router.post('/permission', async(req,res)=> {
   try {
     await permission.save();
 
-    sendEmailToGovt({permission})       //mail sent to host
+    //sendEmailToGovt({permission})       //mail sent to host
     //sendWelcomeMessage(docs.applicationNo,docs.visitorName,docs.visitorEmail,docs.visitorPhnNo,docs.hostPhnNo,docs.checkInTime)
     res.render("portfolio",{
       ngo:permission
