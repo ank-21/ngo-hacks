@@ -15,6 +15,15 @@
         <link rel="stylesheet" type="text/css" href="css/util.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <style>
+        #exampleModal{
+          overflow-y: scroll;
+        }
+        #exampleModal::-webkit-scrollbar {
+    display: none;
+      }
+      #exampleModal{
+    -ms-overflow-style: none;
+      }
         .marquee {
          width: 100vw;
          margin: 0 auto;
@@ -136,13 +145,13 @@
                         <a href="#profile" class="tab-profile active"><i><i class="fa fa-user"></i></i>PROFILE</a>
                     </li>
                     <li class="tmenu">
-                        <a href="#resume" ><i><i class="fa fa-wpexplorer"></i></i>DETAILS</a>
+                        <a href="#resume" ><i><i class="fa fa-info-circle"></i></i>DETAILS</a>
                     </li>
                     <li class="tmenu">
-                        <a href="#portfolio" ><i><i class="fa fa-eercast"></i></i>GALLERY</a>
+                        <a href="#portfolio" ><i><i class="fa fa-check-circle"></i></i>PERMISSIONS</a>
                     </li>    
                     <li class="tmenu">    
-                        <a href="#contact" ><i><i class="fa fa-telegram"></i></i>INVITATIONS</a>
+                        <a href="#contact" ><i><i class="fa fa-envelope"></i></i>INBOX</a>
                     </li>
                 </ul>
             </nav>
@@ -555,7 +564,7 @@
                            <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Reasons for organising</span>{{ngo.reasons}}</li>
                            <li><span class="text-color">Date Of Organizing</span>
                             {{ngo.date}}
-                            </li>
+                          </li>
                         </ul>
                      </div>
                      <div class="ex-box" style="margin-bottom:5%;">
@@ -646,10 +655,13 @@
 });
   </script>
   <script>
+    var organize = document.getElementById("selected");
+  </script>
+  <script>
       function disableOrganize(){
-        var y = document.getElementById("textarea1");
-        var p = document.getElementById("selected").selectedIndex;
-        var strUser = document.getElementsByTagName("option")[p].value;
+        var y = document.querySelector("#textarea1");
+        var p = document.querySelector("#selected").selectedIndex;
+        var strUser = document.querySelectorAll("#selected option")[p].value;
         console.log(strUser);
         if(strUser === "Others")
           y.disabled = false;

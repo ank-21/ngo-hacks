@@ -278,7 +278,7 @@ button:hover {
 .in{
   transition: all 0.4s;
 }
-#register{
+#login{
   display:none;
 }
 @media (max-width:568px){
@@ -301,7 +301,7 @@ button:hover {
 }
 #btn{
   top:0;
-  left:0;
+  left:124px;
   position:absolute;
   width:110px;
   height:100%;
