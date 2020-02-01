@@ -1,4 +1,5 @@
 const express = require('express');
+const moment = require('moment');
 // const passport = require('passport');
 const router = express.Router();
 const {sendEmailToGovt} = require('../account/nodemailer');
@@ -47,8 +48,10 @@ router.post('/details', async(req,res)=>{
 })
 
 router.post('/permission', async(req,res)=> {
-  console.log(req.body);
   const permission = new NGOPERMISSION(req.body);
+  permission.registrationid = 'REG'+Date.now();
+  permission.date = moment().format("MMM Do YYYY");
+  console.log(permission);
   try {
     await permission.save();
 

@@ -26,8 +26,7 @@ const ngopermissionSchema = new mongoose.Schema({
         type:String
     },
     date:{
-        type:Date,
-        default:Date.now
+        type:String
     },
     gender:{
         type:String
@@ -51,8 +50,8 @@ const ngopermissionSchema = new mongoose.Schema({
         type:Number
     },
     registrationid:{
-        type:String,
-    }
+        type:String
+    },
     people:{
         type:Number
     },
