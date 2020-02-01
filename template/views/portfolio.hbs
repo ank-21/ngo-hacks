@@ -172,15 +172,7 @@
                         <ul>
                             <li><span class="text-color">Name Of the NGO</span>{{ngo.name}}</li>
                            <li><span class="text-color">Mobile Number</span>{{ngo.phone}}</li>
-                           
                            <li><span class="text-color">EMAIL ID</span>{{ngo.emailid}}</li>
-                        </ul>
-                     </div>
-                     <!-- <div class="ex-heading loader">
-                        <h2>Details</h2>
-                     </div> -->
-                     <div class="left-address"  style="padding-right:3%;">
-                        <ul>
                             <li><span class="text-color">Name of Board Of Director</span>{{ngo.directorname}}</li>
                            <li><span class="text-color">Gender</span>
                            {{ngo.gender}}
@@ -367,13 +359,8 @@
                            <li><span class="text-color">EMAIL ID</span>{{ngo.emailid}}</li>
                         </ul>
                      </div>
-                    <div class="left-address">
-                        <ul>
-                            <li><span class="text-color">Name Of the NGO</span>{{ngo.name}}</li>
-                           <li><span class="text-color">Mobile Number</span>{{ngo.phone}}</li>
-                           
-                           <li><span class="text-color">EMAIL ID</span>{{ngo.emailid}}</li>
-                        </ul>
+                     <div class="ex-heading loader">
+                        <h2>Permissions</h2>
                      </div>
                      <div class="left-address"  style="padding-right:3%;">
                         <ul>
@@ -387,7 +374,7 @@
                         </ul>
                      </div>
                      <div class="ex-box" style="margin-bottom:5%;">
-                      <button type="button" class="btn send-style" data-toggle="modal" data-target="#exampleModal">Edit Details</button>
+                      <button type="button" class="btn send-style" data-toggle="modal" data-target="#exampleModal1">Edit Details</button>
                       <button type="button" class="btn send-style">Seek Permission</button>
                     </div>
 
@@ -401,7 +388,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="/ngo/modal">
+        <form method="POST" action="/ngo/permission">
           <div class="form-group">
             <input type="text" class="form-control" name="name" value="{{ngo.name}}" hidden>
           </div>
