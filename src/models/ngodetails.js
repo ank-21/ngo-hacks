@@ -27,9 +27,7 @@ const ngodetailsSchema = new mongoose.Schema({
         type:Number
     },
     links:[{
-        link:{
-            type:String
-        }
+        type:String
     }]
 })
 
