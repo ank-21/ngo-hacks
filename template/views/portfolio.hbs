@@ -78,6 +78,12 @@
     .border-class{
       border:2px solid #d9d9d9;
     }
+     .text-class{
+      border:2px solid #d9d9d9;
+    }
+    .text-class:focus{
+      border:2px solid #d9d9d9;
+    }
         </style>
 </head>
 <body>
@@ -169,7 +175,24 @@
                      <div class="ex-heading loader">
                         <h2>Details</h2>
                      </div>
-                     <div class="ex-box">
+                     <div class="left-address"  style="padding-right:3%;">
+                        <ul>
+                            <li><span class="text-color">Organize</span>{{ngo.name}}</li>
+                           <li><span class="text-color">Category</span>{{ngo.phone}}</li>
+                           
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Reasons for organising</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                           <li><span class="text-color">Years Operated</span>{{ngo.phone}}</li>
+                           <li><span class="text-color">No. of Associated People</span>{{ngo.phone}}</li>
+                           <li><span class="text-color">Social Media Links</span><a>{{ngo.phone}}</a></li>
+                           
+                        </ul>
+                     </div>
+                     <!-- <div class="ex-box">
                         <h2>2010-2012</h2>
                         <h4>PROJECT MANAGER</h4>
                         <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print</p>
@@ -188,7 +211,7 @@
                         <h2>2010-2012</h2>
                         <h4>PROJECT MANAGER</h4>
                         <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print</p>
-                     </div>
+                     </div> -->
                      <div class="ex-box" style="margin-bottom:5%;">
                       <button type="button" class="btn send-style" data-toggle="modal" data-target="#exampleModal">Add Details</button>
                       <button type="button" class="btn send-style">Seek Permission</button>
@@ -204,7 +227,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="/ngo/modal">
+        <form method="POST" action="/ngo/modal" autocomplete="off">
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="Organizing" class="col-form-label label-input100">Organize</label>
             <select class="form-control input100" id="selected" name="organize" onchange="disableOrganize()" required>
@@ -216,8 +239,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="other-organizing" class="col-form-label">Others(please specify)</label>
-            <textarea class="form-control border-class" id="textarea1" name="otherorganize"></textarea>
+            <label for="other-organizing" class="col-form-label label-input100">Others(please specify)</label>
+            <textarea class="form-control text-class" id="textarea1"></textarea>
           </div>
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="Category" class="col-form-label label-input100">Category</label>
@@ -231,11 +254,11 @@
           </div>
           <div class="form-group">
             <label for="other-category" class="col-form-label">Others(please specify)</label>
-            <textarea class="form-control border-class" id="textarea2" name="othecategory"></textarea>
+            <textarea class="form-control text-class" id="textarea2"></textarea>
           </div>
           <div class="form-group">
             <label for="other-organizing" class="col-form-label">Reasons for Organizing</label>
-            <textarea class="form-control border-class" name="reasons" required></textarea>
+            <textarea class="form-control text-class" name="reasons" required></textarea>
           </div>
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="years-operated" class="col-form-label label-input100">Years Operated</label>
