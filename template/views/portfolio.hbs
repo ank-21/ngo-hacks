@@ -84,6 +84,10 @@
     .text-class:focus{
       border:2px solid #d9d9d9;
     }
+      .left-address ul li:last-child{
+      pointer-events:all;
+    }
+       
         </style>
 </head>
 <body>
@@ -133,13 +137,13 @@
                         <a href="#profile" class="tab-profile active"><i><i class="fa fa-user"></i></i>PROFILE</a>
                     </li>
                     <li class="tmenu">
-                        <a href="#resume" ><i><i class="fa fa-wpexplorer"></i></i>RESUME</a>
+                        <a href="#resume" ><i><i class="fa fa-wpexplorer"></i></i>DETAILS</a>
                     </li>
                     <li class="tmenu">
-                        <a href="#portfolio" ><i><i class="fa fa-eercast"></i></i>PORTFOLIO</a>
+                        <a href="#portfolio" ><i><i class="fa fa-eercast"></i></i>GALLERY</a>
                     </li>    
                     <li class="tmenu">    
-                        <a href="#contact" ><i><i class="fa fa-telegram"></i></i>CONTACT</a>
+                        <a href="#contact" ><i><i class="fa fa-telegram"></i></i>INVITATIONS</a>
                     </li>
                 </ul>
             </nav>
@@ -177,19 +181,13 @@
                      </div>
                      <div class="left-address"  style="padding-right:3%;">
                         <ul>
-                            <li><span class="text-color">Organize</span>{{ngo.name}}</li>
-                           <li><span class="text-color">Category</span>{{ngo.phone}}</li>
+                            <li><span class="text-color">Organize</span>{{ngo.organize}}</li>
+                           <li><span class="text-color">Category</span>{{ngo.category}}</li>
                            
-                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Reasons for organising</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-                           <li><span class="text-color">Years Operated</span>{{ngo.phone}}</li>
-                           <li><span class="text-color">No. of Associated People</span>{{ngo.phone}}</li>
-                           <li><span class="text-color">Social Media Links</span><a>{{ngo.phone}}</a></li>
-                           
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Reasons for organising</span>{{ngo.reasons}}</li>
+                           <li><span class="text-color">Years Operated</span>{{ngo.years}}</li>
+                           <li><span class="text-color">No. of Associated People</span>{{ngo.people}}</li>
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Social Media Links</span><a href="">{{ngo.links}}</a></li>
                         </ul>
                      </div>
                      <!-- <div class="ex-box">
@@ -227,34 +225,44 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="/ngo/modal" autocomplete="off">
+        <form method="POST" action="/ngo/modal">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" value="{{ngo.name}}" hidden>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="phone" value="{{ngo.phone}}" hidden>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="emailid" value="{{ngo.emailid}}" hidden>
+          </div>
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="Organizing" class="col-form-label label-input100">Organize</label>
             <select class="form-control input100" id="selected" name="organize" onchange="disableOrganize()" required>
-              <option></option>
-              <option>Awareness Rally</option>
-              <option>Donation Camp</option>
-              <option>Medical Camp</option>
-              <option>Others</option>
+              <option value=""></option>
+              <option value="Awareness Rally">Awareness Rally</option>
+              <option value="Donation Camp">Donation Camp</option>
+              <option value="Medical Camp">Medical Camp</option>
+              <option value="Others">Others</option>
             </select>
           </div>
           <div class="form-group">
             <label for="other-organizing" class="col-form-label label-input100">Others(please specify)</label>
-            <textarea class="form-control text-class" id="textarea1"></textarea>
+            <textarea class="form-control text-class" name="otherorganize" id="textarea1"></textarea>
           </div>
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="Category" class="col-form-label label-input100">Category</label>
-            <select class="form-control input100" id="categorized" name="category" onchange="disableCategory()" required>
-              <option>Animals</option>
-              <option>Self Help</option>
-              <option>Health Care</option>
-              <option>Detox</option>
-              <option>Others</option>
+            <select class="form-control input100" id="categorized" name="category" onchange="Category()" required>
+               <option value=""></option>
+              <option value="Animals">Animals</option>
+              <option value="Self Help">Self Help</option>
+              <option value="Health Care">Health Care</option>
+              <option value="Detox">Detox</option>
+              <option value="Others">Others</option>
             </select>
           </div>
           <div class="form-group">
             <label for="other-category" class="col-form-label">Others(please specify)</label>
-            <textarea class="form-control text-class" id="textarea2"></textarea>
+            <textarea class="form-control text-class" name="othercategory" id="textarea2"></textarea>
           </div>
           <div class="form-group">
             <label for="other-organizing" class="col-form-label">Reasons for Organizing</label>
@@ -638,8 +646,8 @@
   keyboard: true
 });
   </script>
-  <script>
-      function disableOrganize() {
+   <script>
+      function disableOrganize(){
         var y = document.getElementById("textarea1");
         var p = document.getElementById("selected").selectedIndex;
         var strUser = document.getElementsByTagName("option")[p].value;
@@ -649,27 +657,29 @@
         else
           y.disabled = true;
 
-    }
-     function disableCategory() {
-        var z = document.getElementById("textarea2");
-        var q = document.getElementById("categorized").selectedIndex;
-        var strUser1 = document.getElementsByTagName("option")[q].value;
-        console.log(strUser1);
-        if(strUser1 === "Others")
-          z.disabled = false;
+    };
+  </script>
+  <script>
+     function Category(){
+        var a = document.querySelector("#textarea2");
+        var b = document.querySelector("#categorized").selectedIndex;
+        var str = document.querySelectorAll("#categorized option")[b].value;
+        console.log(str);
+        if(str === "Others")
+          a.disabled = false;
         else
-          z.disabled = true;
-    }
+          a.disabled = true;
+    };
     function add_fields() {
     var objTo = document.getElementById('room_fileds');
     var divtest = document.createElement("div");
     divtest.innerHTML = '<div class="form-group wrap-input100 validate-input m-b-23"><label for="message-text" class="col-form-label label-input100">Social Media Links</label><input type="url" class="form-control col-md-10 input100"><span class="focus-input100"></span><input type="button" id="more_fields" class="add-more" onclick="add_fields();" value="+"/><input type="button" class="add-more" onclick="remove_fields();" value="-"/>'; 
     objTo.appendChild(divtest);
-}
+};
 function remove_fields(){
   var objTo = document.getElementById('room_fileds');
     objTo.removeChild(objTo.lastChild);
-}
+};
 //     var loadFile = function(event) {
 //   var image = document.getElementById('output');
 //   image.src = URL.createObjectURL(event.target.files[0]);
