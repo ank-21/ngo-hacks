@@ -6,9 +6,15 @@ const ngodetailsSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    otherorganize:{
+        type:String
+    },
     category:{
         type:String,
         required:true
+    },
+    othercategory:{
+        type:String
     },
     reasons:{
         type:String,
