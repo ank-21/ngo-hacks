@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modal Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>
+    .add-more{
+      float:right;
+      text-align:center;
+      cursor:pointer;
+      outline:none;
+      position:relative;
+      top:-35px;
+      margin-left:2%;
+      font-weight:bolder;
+    }
+    .send-style{
+      background:#cf455c;
+      color:white;
+    }
+    .btn-center{
+      display:flex;
+      justify-content:center;
+    }
+  </style>
+</head>
+<body>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Open modal</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+              <label for="years-operated" class="col-form-label">Organization Name</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="years-operated" class="col-form-label">Email Id</label>
+            <input type="text" class="form-control" disabled>
+          </div>
+          <div class="form-group">
+              <label for="years-operated" class="col-form-label">Phone Number</label>
+            <input type="text" class="form-control" disabled>
+          </div>
+        	<div class="form-group">
+            <label for="Organizing" class="col-form-label">Organize</label>
+            <select class="form-control" id="selected" onchange="disableOrganize()">
+            	<option></option>
+            	<option>Awareness Rally</option>
+            	<option>Donation Camp</option>
+            	<option>Medical Camp</option>
+            	<option>Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="other-organizing" class="col-form-label">Others(please specify)</label>
+            <textarea class="form-control" id="textarea1"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="Category" class="col-form-label">Category</label>
+            <select class="form-control" id="categorized" onchange="disableCategory()">
+            	<option>Animals</option>
+            	<option>Self Help</option>
+            	<option>Health Care</option>
+            	<option>Detox</option>
+            	<option>Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="other-category" class="col-form-label">Others(please specify)</label>
+            <textarea class="form-control" id="textarea2"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="other-organizing" class="col-form-label">Reasons for Organizing</label>
+            <textarea class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="years-operated" class="col-form-label">Years Operated</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">No. Of associated people</label>
+            <input type="text" class="form-control">
+          </div>
+          <div id="room_fileds">
+           <div class="form-group">
+            <label for="message-text" class="col-form-label">Social Media Links</label>
+            <input type="url" class="form-control col-md-10">
+            <input type="button" id="more_fields" class="add-more" onclick="add_fields();" value="+"/>
+             <input type="button" class="add-more" onclick="remove_fields();" value="-"/>
+          </div>
+        </div>
+    <!--     <div class="form-group">
+        <div class="form">
+        <p><input type="file" class="image-upload" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;" multiple></p>
+        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+        <p><img id="output" width="150px" /></p>
+      </div>
+    </div> -->
+        </form>
+      </div>
+      <div class="modal-footer btn-center">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn send-style">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script>
+	 $('#myModal').modal({
+  keyboard: true
+});
+	</script>
+	<script>
+		  function disableOrganize() {
+        var y = document.getElementById("textarea1");
+        var p = document.getElementById("selected").selectedIndex;
+        var strUser = document.getElementsByTagName("option")[p].value;
+        console.log(strUser);
+        if(strUser === "Others")
+          y.disabled = false;
+        else
+          y.disabled = true;
+
+    }
+     function disableCategory() {
+        var z = document.getElementById("textarea2");
+        var q = document.getElementById("categorized").selectedIndex;
+        var strUser1 = document.getElementsByTagName("option")[q].value;
+        console.log(strUser1);
+        if(strUser1 === "Others")
+          z.disabled = false;
+        else
+          z.disabled = true;
+    }
+    function add_fields() {
+    var objTo = document.getElementById('room_fileds');
+    var divtest = document.createElement("div");
+    divtest.innerHTML = '<div class="form-group"><label for="message-text" class="col-form-label">Social Media Links</label><input type="url" class="form-control col-md-10"><input type="button" id="more_fields" class="add-more" onclick="add_fields();" value="+"><input type="button" class="add-more" onclick="remove_fields();" value="-"/></div>'; 
+    objTo.appendChild(divtest);
+}
+function remove_fields(){
+  var objTo = document.getElementById('room_fileds');
+    objTo.removeChild(objTo.lastChild);
+}
+//     var loadFile = function(event) {
+//   var image = document.getElementById('output');
+//   image.src = URL.createObjectURL(event.target.files[0]);
+// };    
+
+	</script>
+</body>
+</html>
