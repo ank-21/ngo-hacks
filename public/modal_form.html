@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
   <style>
     .add-more{
       float:right;
@@ -24,6 +26,19 @@
       display:flex;
       justify-content:center;
     }
+    .form-control{
+      border:0;
+      border-bottom:1px;
+      outline:none;
+    }
+    .form-control:focus{
+      outline:none;
+      border:none;
+      box-shadow:none;
+    }
+    .border-class{
+      border:2px solid #d9d9d9;
+    }
   </style>
 </head>
 <body>
@@ -40,21 +55,24 @@
       </div>
       <div class="modal-body">
         <form>
-            <div class="form-group">
-              <label for="years-operated" class="col-form-label">Organization Name</label>
-            <input type="text" class="form-control">
+            <div class="form-group wrap-input100 validate-input m-b-23">
+              <label for="years-operated" class="col-form-label label-input100">Organization Name</label>
+            <input type="text" class="form-control input100">
+            <span class="focus-input100"></span>
           </div>
-          <div class="form-group">
-              <label for="years-operated" class="col-form-label">Email Id</label>
-            <input type="text" class="form-control" disabled>
+          <div class="form-group wrap-input100 validate-input m-b-23">
+              <label for="years-operated" class="col-form-label label-input100">Email Id</label>
+            <input type="text" class="form-control input100" disabled>
+            <span class="focus-input100"></span>
           </div>
-          <div class="form-group">
-              <label for="years-operated" class="col-form-label">Phone Number</label>
-            <input type="text" class="form-control" disabled>
+          <div class="form-group wrap-input100 validate-input m-b-23">
+              <label for="years-operated" class="col-form-label label-input100">Phone Number</label>
+            <input type="text" class="form-control input100" disabled>
+            <span class="focus-input100"></span>
           </div>
-        	<div class="form-group">
-            <label for="Organizing" class="col-form-label">Organize</label>
-            <select class="form-control" id="selected" onchange="disableOrganize()">
+        	<div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="Organizing" class="col-form-label label-input100">Organize</label>
+            <select class="form-control input100" id="selected" onchange="disableOrganize()">
             	<option></option>
             	<option>Awareness Rally</option>
             	<option>Donation Camp</option>
@@ -64,11 +82,11 @@
           </div>
           <div class="form-group">
             <label for="other-organizing" class="col-form-label">Others(please specify)</label>
-            <textarea class="form-control" id="textarea1"></textarea>
+            <textarea class="form-control border-class" id="textarea1"></textarea>
           </div>
-          <div class="form-group">
-            <label for="Category" class="col-form-label">Category</label>
-            <select class="form-control" id="categorized" onchange="disableCategory()">
+          <div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="Category" class="col-form-label label-input100">Category</label>
+            <select class="form-control input100" id="categorized" onchange="disableCategory()">
             	<option>Animals</option>
             	<option>Self Help</option>
             	<option>Health Care</option>
@@ -78,26 +96,30 @@
           </div>
           <div class="form-group">
             <label for="other-category" class="col-form-label">Others(please specify)</label>
-            <textarea class="form-control" id="textarea2"></textarea>
+            <textarea class="form-control border-class" id="textarea2"></textarea>
           </div>
           <div class="form-group">
             <label for="other-organizing" class="col-form-label">Reasons for Organizing</label>
-            <textarea class="form-control"></textarea>
+            <textarea class="form-control border-class"></textarea>
           </div>
-          <div class="form-group">
-            <label for="years-operated" class="col-form-label">Years Operated</label>
-            <input type="text" class="form-control">
+          <div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="years-operated" class="col-form-label label-input100">Years Operated</label>
+            <input type="text" class="form-control input100">
+            <span class="focus-input100"></span>
           </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">No. Of associated people</label>
-            <input type="text" class="form-control">
+          <div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="message-text" class="col-form-label label-input100">No. Of associated people</label>
+            <input type="text" class="form-control input100">
+            <span class="focus-input100"></span>
           </div>
           <div id="room_fileds">
-           <div class="form-group">
-            <label for="message-text" class="col-form-label">Social Media Links</label>
-            <input type="url" class="form-control col-md-10">
+           <div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="message-text" class="col-form-label label-input100">Social Media Links</label>
+            <input type="url" class="form-control col-md-10 input100">
+            <span class="focus-input100"></span>
             <input type="button" id="more_fields" class="add-more" onclick="add_fields();" value="+"/>
              <input type="button" class="add-more" onclick="remove_fields();" value="-"/>
+
           </div>
         </div>
     <!--     <div class="form-group">
