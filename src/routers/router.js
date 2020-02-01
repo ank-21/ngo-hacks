@@ -14,7 +14,7 @@ router.post('/signup', async(req,res)=> {
     const ngo = new NGO(req.body);
     try {
             await ngo.save();
-            console.log(ngo);
+            console.log("list",ngo);
             res.render("portfolio",{
               ngo
             });
