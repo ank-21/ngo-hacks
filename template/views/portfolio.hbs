@@ -181,14 +181,6 @@
                      </div> -->
                      <div class="left-address"  style="padding-right:3%;">
                         <ul>
-                            <!-- <li><span class="text-color">Organize</span>
-                            {{!-- {{#if {{ngo.organize}}=="Others"}}
-                              {{ngo.otherorganize}} --}}
-                            {{ngo.organize}}
-                            {{!-- {{else}}
-                            {{ngo.organize}}
-                            {{/if}} --}}
-                            </li> -->
                             <li><span class="text-color">Name of Board Of Director</span>{{ngo.directorname}}</li>
                            <li><span class="text-color">Gender</span>
                            {{ngo.gender}}
@@ -199,7 +191,6 @@
                            <li><span class="text-color">State</span>
                            {{ngo.state}}
                            </li>
-                           <!-- <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Reasons for organising</span>{{ngo.reasons}}</li> -->
                            <li><span class="text-color">Years Operated</span>{{ngo.years}}</li>
                            <li><span class="text-color">No. of Associated People</span>{{ngo.people}}</li>
                            <li><span class="text-color">Website</span><a href="{{ngo.website}}">{{ngo.website}}</a></li>
@@ -291,21 +282,7 @@
               <option>West Bengal</option>
             </select>
           </div>
-       <!--    <div class="form-group wrap-input100 validate-input m-b-23">
-            <label for="Organizing" class="col-form-label label-input100">Organize</label>
-            <select class="form-control input100" id="selected" name="organize" onchange="disableOrganize()" required>
-              <option value=""></option>
-              <option value="Awareness Rally">Awareness Rally</option>
-              <option value="Donation Camp">Donation Camp</option>
-              <option value="Medical Camp">Medical Camp</option>
-              <option value="Others">Others</option>
-            </select>
-          </div> -->
-          <!-- <div class="form-group">
-            <label for="other-organizing" class="col-form-label label-input100">Others(please specify)</label>
-            <textarea class="form-control text-class" name="otherorganize" id="textarea1"></textarea>
-          </div>
- -->          <div class="form-group wrap-input100 validate-input m-b-23">
+       <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="Category" class="col-form-label label-input100">Category</label>
             <select class="form-control input100" id="categorized" name="category" onchange="Category()" required>
                <option value=""></option>
@@ -320,10 +297,6 @@
             <label for="other-category" class="col-form-label">Others(please specify)</label>
             <textarea class="form-control text-class" name="othercategory" id="textarea2"></textarea>
           </div>
-          <!-- <div class="form-group">
-            <label for="other-organizing" class="col-form-label">Reasons for Organizing</label>
-            <textarea class="form-control text-class" name="reasons" required></textarea>
-          </div> -->
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="years-operated" class="col-form-label label-input100">Years Operated</label>
             <input type="number" class="form-control input100" name="years">
@@ -362,291 +335,15 @@
 </div>
                      </div>
                   </div>
-                 <!--  <div class="col-md-6 col-sm-12 no-padding bg-color-right">
-                     <div class="top-skills">
-                        <div class="skill-name">
-                           <div class="sn">PS</div>
-                           <ul>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                           </ul>
-                        </div>
-                        <div class="skill-name">
-                           <div class="sn">AI</div>
-                           <ul>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                           </ul>
-                        </div>
-                        <div class="skill-name">
-                           <div class="sn">F</div>
-                           <ul>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                           </ul>
-                        </div>
-                        <div class="skill-name">
-                           <div class="sn">S</div>
-                           <ul>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="right-skills">
-                        <div class="row no-margin">
-                           <div class="col-md-12 heading-skills no-padding">
-                              <h3>MY skills</h3>
-                           </div>
-                        </div>
-                        <div class="row no-margin">
-                           <div class="col-md-5 no-padding">
-                              <h4>Photoshop</h4>
-                           </div>
-                           <div class="col-md-7 no-padding">
-                              <div class="progress">
-                                 <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row no-margin">
-                           <div class="col-md-5 no-padding">
-                              <h4>Ms office</h4>
-                           </div>
-                           <div class="col-md-7 no-padding">
-                              <div class="progress">
-                                 <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row no-margin">
-                           <div class="col-md-5 no-padding">
-                              <h4>Illustrator</h4>
-                           </div>
-                           <div class="col-md-7 no-padding">
-                              <div class="progress">
-                                 <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row no-margin">
-                           <div class="col-md-5 no-padding">
-                              <h4>html</h4>
-                           </div>
-                           <div class="col-md-7 no-padding">
-                              <div class="progress">
-                                 <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row no-margin mt-25">
-                           <div class="col-md-5 no-padding">
-                              <h4>Photoshop</h4>
-                           </div>
-                           <div class="col-md-7 no-padding">
-                              <div class="progress">
-                                 <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row no-margin">
-                           <div class="col-md-5 no-padding">
-                              <h4>Ms office</h4>
-                           </div>
-                           <div class="col-md-7 no-padding">
-                              <div class="progress">
-                                 <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row no-margin">
-                           <div class="col-md-5 no-padding">
-                              <h4>Illustrator</h4>
-                           </div>
-                           <div class="col-md-7 no-padding">
-                              <div class="progress">
-                                 <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row no-margin">
-                           <div class="col-md-5 no-padding">
-                              <h4>html</h4>
-                           </div>
-                           <div class="col-md-7 no-padding">
-                              <div class="progress">
-                                 <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row no-margin mt-25">
-                           <div class="col-md-12 heading-skills no-padding">
-                              <h3>INTERSESTS</h3>
-                           </div>
-                           <div class="col-md-4 intetst-box">
-                              <div class="intetst-icons">
-                                 <i class="fa fa-plane" aria-hidden="true"></i>
-                                 <br><br>
-                                 <h5>TRAVEL</h5>
-                              </div>
-                           </div>
-                           <div class="col-md-4 intetst-box">
-                              <div class="intetst-icons">
-                                 <i class="fa fa-headphones" aria-hidden="true"></i>
-                                 <br><br>
-                                 <h5>MUSIC</h5>
-                              </div>
-                           </div>
-                           <div class="col-md-4 intetst-box">
-                              <div class="intetst-icons">
-                                 <i class="fa fa-file-video-o" aria-hidden="true"></i>
-                                 <br><br>
-                                 <h5>video</h5>
-                              </div>
-                           </div>
-                           <div class="col-md-4 intetst-box">
-                              <div class="intetst-icons">
-                                 <i class="fa fa-bicycle" aria-hidden="true"></i>
-                                 <br><br>
-                                 <h5>CYCLING</h5>
-                              </div>
-                           </div>
-                           <div class="col-md-4 intetst-box">
-                              <div class="intetst-icons">
-                                 <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                 <br><br>
-                                 <h5>COOCKING</h5>
-                              </div>
-                           </div>
-                           <div class="col-md-4 intetst-box">
-                              <div class="intetst-icons">
-                                 <i class="fa fa-pied-piper-alt" aria-hidden="true"></i>
-                                 <br><br>
-                                 <h5>SPORTS</h5>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="eduction-right">
-                        <div class="row no-margin">
-                           <div class="col-md-12 heading-skills no-padding">
-                              <h3>EDUCATION</h3>
-                              <div class="ex-box">
-                                 <h2>2010-2012</h2>
-                                 <h4>PROJECT MANAGER</h4>
-                                 <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print</p>
-                              </div>
-                           </div>
-                           <div class="col-md-12 heading-skills no-padding">
-                              <div class="ex-box">
-                                 <h2>2010-2012</h2>
-                                 <h4>PROJECT MANAGER</h4>
-                                 <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="address-qr-right">
-                        <div class="row no-margin">
-                           <div class="col-md-5 no-padding">
-                              <div class="qr-box">
-                                 <img src="img/qr.png">
-                              </div>
-                           </div>
-                           <div class="col-md-7 no-padding">
-                              <div class="address-right-box">
-                                 <ul>
-                                    <li>
-                                       <i class="fa fa-phone-square" aria-hidden="true"></i>
-                                       <p>45534546565</p>
-                                    </li>
-                                    <li>
-                                       <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                       <p>Info@gmail.com</p>
-                                    </li>
-                                    <li>
-                                       <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                       <p>Dermis India J-219, Saket New Delhi -110017.</p>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div> -->
                </div>
             </div>
          </div>
          </div>
            </section>
 
-            <section id="portfolio">
-
-                 <div class="about col-md-12 col-sm-12">
-                  <!--   <div class="photo">
-                        <ul>
-                            <li><img src="img/photo.jpg" alt="" class="pro-pic"></li>
-
-                        </ul>
-                    </div> -->
-                    <div class="ngo-name">
-                    <h1>{{ngo.name}}</h1>
-                    <br>
-                    <!-- <p style="width:80%">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, inventore eveniet! Maiores, doloremque eius esse quae quis veniam obcaecati modi!
-                    </p> -->
-                  </div>
-                </div>
-
-                <ul class="personal-info col-md-8 col-sm-12">
-                    <li><label>Name</label><span>{{ngo.name}}</span></li>
-                    <li><label>Email</label><span class="word-wrap" style="text-transform: none;">{{ngo.emailid}}</span></li>
-                    <li><label>Phone</label><span>{{ngo.phone}}</span></li>
-                </ul>
-            </div>
-
-            <nav class="menu">
-                <ul class="tabs">
-                    <li class="tmenu">
-                        <a href="#profile" class="tab-profile active"><i><i class="fa fa-user"></i></i>PROFILE</a>
-                    </li>
-                    <li class="tmenu">
-                        <a href="#resume" ><i><i class="fa fa-wpexplorer"></i></i>DETAILS</a>
-                    </li>
-                    <li class="tmenu">
-                        <a href="#portfolio" ><i><i class="fa fa-eercast"></i></i>PERMISSIONS</a>
-                    </li>    
-                    <li class="tmenu">    
-                        <a href="#contact" ><i><i class="fa fa-telegram"></i></i>INBOX</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <section id="portfolio">
+      <section id="portfolio">
                 <div class="timeline-section">
-                      <div class="main-wrapper-resume">
-         <!-- carttitle-wrapper start -->
-         
+                      <div class="main-wrapper-resume">  
          <div class="carttitle-wrapper">
             <div class="color-box">
                <button id="red-color" class="btn-style"></button>
@@ -670,6 +367,14 @@
                            <li><span class="text-color">EMAIL ID</span>{{ngo.emailid}}</li>
                         </ul>
                      </div>
+                    <div class="left-address">
+                        <ul>
+                            <li><span class="text-color">Name Of the NGO</span>{{ngo.name}}</li>
+                           <li><span class="text-color">Mobile Number</span>{{ngo.phone}}</li>
+                           
+                           <li><span class="text-color">EMAIL ID</span>{{ngo.emailid}}</li>
+                        </ul>
+                     </div>
                      <div class="left-address"  style="padding-right:3%;">
                         <ul>
                             <li><span class="text-color">Organize</span>
@@ -686,11 +391,11 @@
                       <button type="button" class="btn send-style">Seek Permission</button>
                     </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Permission Details</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Permission Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -724,10 +429,6 @@
             <label for="other-organizing" class="col-form-label">Reasons for Organizing</label>
             <textarea class="form-control text-class" name="reasons" required></textarea>
           </div>
-          <!--  <div class="form-group wrap-input100 validate-input m-b-23">
-            <label for="date-organizing" class="col-form-label">Date of Organizing</label>
-            <input type="date" class="form-control text-class" name="date" required>
-          </div> -->
     <div class="btn-center">
           <button type="submit" class="btn send-style">Save</button>
     </div>

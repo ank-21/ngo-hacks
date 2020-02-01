@@ -16,7 +16,7 @@ const ngodetailsSchema = new mongoose.Schema({
     address:{
         type:String,
         required: true
-    }
+    },
     state:{
         type:String,
         required: true
