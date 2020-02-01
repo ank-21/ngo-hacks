@@ -270,9 +270,9 @@ button:hover {
   overflow-x:hidden;
   height:100vh;
 }
-@media (max-width:320px){
+@media (max-width:360px){
 .form-box{
-  height:110vh;
+  height:120vh;
 }
 }
 .in{
@@ -404,7 +404,7 @@ button:hover {
   width:100%;
   position:relative;
   margin-bottom:0;
-  margin-top:30px;
+  margin-top:15%;
   background:black;
 }
 .break::after{
