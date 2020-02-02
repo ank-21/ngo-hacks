@@ -117,7 +117,7 @@
             <h2 style="text-align: center;">Invite Applications</h2>
         </div> -->
         <nav class="navbar fixed-top  navbar-expand-lg navbar-dark fixed" style="background-color: 	#43a9de;">
-            <a style="padding-left:5px"class="navbar-brand" href="/"> NMS | NGO Monitoring System</a>
+            <a style="padding-left:5px"class="navbar-brand" href="/gov"> NMS | NGO Monitoring System</a>
             <ul class="navbar-nav" style="margin-left:70vw;color:white;">
                 <li class="nav-item">
                   <a style="color:white;font-size: 22px;" class="nav-link" href="/gov/logout">Logout</a>
@@ -126,11 +126,11 @@
         </nav>
         <div class="sideNav">
             <div class="iconHolder">
-            <div class="sideIcons"><a href="/gov"><i class="fa fa-home" aria-hidden="true"></i></a></div>
-            <div class="sideIcons"><a href="/gov/ngo/all"><i class="fa fa-users" aria-hidden="true"></i></a></div>
-            <div class="sideIcons"><a href="/gov/requests"><i class="fa fa-handshake-o" aria-hidden="true"></i></a></div>
-            <div class="sideIcons"><a href="/gov/funds"><i class="fa fa-money" aria-hidden="true"></i></a></div>
-            <div class="sideIcons"><a href="/gov/invite"><i class="fa  fa-location-arrow" aria-hidden="true"></i></a></div>
+            <div class="sideIcons"><a href="/gov" data-toggle="tooltip" data-placement="right" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a></div>
+            <div class="sideIcons"><a href="/gov/ngo/all" data-toggle="tooltip" data-placement="right" title="All NGOs"><i class="fa fa-users" aria-hidden="true"></i></a></div>
+            <div class="sideIcons"><a href="/gov/requests" data-toggle="tooltip" data-placement="right" title="NGO Requests"><i class="fa fa-handshake-o" aria-hidden="true"></i></a></div>
+            <div class="sideIcons"><a href="/gov/funds" data-toggle="tooltip" data-placement="right" title="Funding"><i class="fa fa-money" aria-hidden="true"></i></a></div>
+            <div class="sideIcons"><a href="/gov/invite" data-toggle="tooltip" data-placement="right" title="Invitations"><i class="fa  fa-location-arrow" aria-hidden="true"></i></a></div>
         </div></div>
         <div class="tableContainer">
             <h2 style="text-align: center;margin-bottom: 50px; font-size: 50px;font-weight: bold;">Invite For Projects</h2>
@@ -378,4 +378,9 @@ function searchByName(){
 
 
 </script>
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
 </html>
