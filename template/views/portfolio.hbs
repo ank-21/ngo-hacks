@@ -164,9 +164,9 @@
                     <li class="tmenu">    
                         <a href="#contact" ><i><i class="fa fa-history"></i></i>HISTORY</a>
                     </li>
-                    <li class="tmenu">    
+                    {{!-- <li class="tmenu">    
                         <a href="#cen" ><i><i class="fa fa-envelope"></i></i>INBOX</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
 
@@ -410,7 +410,7 @@
                       <div class="row">
                         <div class="col-md-3"></div>
                       <button type="button" class="btn send-style btn-center col-md-3" data-toggle="modal" data-target="#exampleModal1">Edit Permission Details</button>
-                      <button type="button" class="btn send-style btn-center col-md-3"  style="margin-left:1%;">Seek Permission</button>
+                      {{!-- <button type="button" class="btn send-style btn-center col-md-3"  style="margin-left:1%;">Seek Permission</button> --}}
                       <div class="col-md-3"></div>
                     </div>
                   </div>
@@ -500,14 +500,14 @@
             <input type="text" class="form-control input100" name="budget">
             <span class="focus-input100"></span>
           </div>
-          <div class="form-group wrap-input100 validate-input m-b-23">
+          {{!-- <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="other-organizing" class="col-form-label label-input100">Number of Projects Completed</label>
             <input type="number" class="form-control input100" name="projects">
             <span class="focus-input100"></span>
-          </div>
+          </div> --}}
          
     <div class="btn-center">
-          <button type="submit" class="btn send-style">Save</button>
+          <button type="submit" class="btn send-style">Seek Permission</button>
     </div>
     </form>
       </div>
@@ -553,7 +553,7 @@
                            <li><span class="text-color">EMAIL ID</span>{{ngo.emailid}}</li>
                         </ul>
                      </div>
-                     <div class="ex-heading loader">
+                     {{!-- <div class="ex-heading loader">
                          <h2 style="letter-spacing:1px;">Date Of Organizing<span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
                           <span style="font-size:1.1rem;">
                             {{ngo.date}}</span>
@@ -582,9 +582,9 @@
                    </div>
                  </div>
                      <div class="ex-box container col-md-3" style="margin-bottom:5%;">
-                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                      <button type="button" class="btn send-style btn-center">Accepted</button> --}}
                       <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
-                    </div>
+                    {{!-- </div>
                    <div class="ex-heading loader">
                          <h2 style="letter-spacing:1px;">Date Of Organizing<span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
                           <span style="font-size:1.1rem;">
@@ -601,22 +601,22 @@
                             <li id="otherorganizedetails" style="display: none;"><span class="text-color">Organize other details</span>
                             {{ngo.otherorganize}}
                             </li>
-                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li>
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li> --}}
                            <!-- <li><span class="text-color">Date Of Organizing</span>
                             {{ngo.date}}
                             </li> -->
                            
-                            <li><span class="text-color">Budget</span>
+                            {{!-- <li><span class="text-color">Budget</span>
                             {{ngo.budget}}
                             </li>
                         </ul>
                      </div>
                      </div>
-                </div>
-                     <div class="ex-box container col-md-3" style="margin-bottom:5%;">
-                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                </div> --}}
+                     {{!-- <div class="ex-box container col-md-3" style="margin-bottom:5%;">
+                      <button type="button" class="btn send-style btn-center">Accepted</button> --}}
                       <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
-                    </div>
+                    {{!-- </div> --}}
                  
                       <div class="ex-heading loader">
                          <h2 style="letter-spacing:1px;">Date Of Organizing<span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
@@ -635,9 +635,9 @@
                             {{ngo.otherorganize}}
                             </li>
                            <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li>
-                           <!-- <li><span class="text-color">Date Of Organizing</span>
+                            <li><span class="text-color">Date Of Organizing</span>
                             {{ngo.date}}
-                            </li> -->
+                            </li> 
                            
                             <li><span class="text-color">Budget</span>
                             {{ngo.budget}}
@@ -646,10 +646,10 @@
                      </div>
                     </div>
                 </div>
-                     <div class="ex-box container col-md-3" style="margin-bottom:5%;">
-                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                     {{!-- <div class="ex-box container col-md-3" style="margin-bottom:5%;">
+                      <button type="button" class="btn send-style btn-center">Accepted</button> --}}
                       <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
-                    </div>
+                    {{!-- </div> --}}
                   </div>
                 </div>
                   </div>
@@ -659,7 +659,7 @@
        
         </section>
 
-        <section id="cen">
+        {{!-- <section id="cen">
                 <div class="timeline-section">
                       <div class="main-wrapper-resume">  
          <div class="carttitle-wrapper">
@@ -820,7 +820,7 @@
           </div>
         </div>
       </div>
-           </section>
+           </section> --}}
 
 
 

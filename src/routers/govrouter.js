@@ -44,21 +44,33 @@ govrouter.get('/invite',auth,(req,res)=>{
 
 govrouter.get('/acceptrequest/:id',auth, (req,res)=>{
     const id = req.params.id;
-    NGOPERMISSION.findOne({registrationid:id}, (err,data)=>{
-        console.log("data",data);
-        
-        //sendEmailToNgoForAcceptance({data});
+    NGOPERMISSION.findByIdAndUpdate(id, {$set: { 'message': 'The Proposal has been accepted.'}}, (err,data)=>{
+        console.log("data for work",data)
+        if(!err){
+            sendEmailToNgoForAcceptance({data})
+            // res.render('portfolio.hbs',{
+            //     ngo:data
+            // });
+            res.redirect("/gov/requests");
+        }
     })
 })
 
 govrouter.get('/declinerequest/:id',auth, (req,res)=>{
     const id = req.params.id;
-    NGOPERMISSION.findOne({registrationid:id}, (err,data)=>{
-        console.log("data",data);
-        
-        //sendEmailToNgoForAcceptance({data});
+    NGOPERMISSION.findByIdAndUpdate(id, {$set: { 'message': 'The Proposal has been accepted.'}}, (err,data)=>{
+        console.log("data for work",data)
+        if(!err){
+            sendEmailToNgoForRejection({data})
+            // res.render('portfolio.hbs',{
+            //     ngo:data
+            // });
+            res.redirect("/gov/requests");
+        }
     })
 })
+
+
 
 govrouter.get('/funds/:id',auth,(req,res)=> {
     const id = req.params.id; 

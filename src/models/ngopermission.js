@@ -16,11 +16,6 @@ const ngopermissionSchema = new mongoose.Schema({
     projects:{
         type:Number,
         default:0,
-        validate(value){
-            if(value<0){
-                throw new Error("Years can't be negative");
-            }
-        }
     },
     budget:{
         type:String

@@ -65,6 +65,15 @@ router.post('/permission', async(req,res)=> {
   }
 })
 
+// router.get('/permission/acceptproposal/:id',async(req,res)=>{
+//   const id = req.params.id; 
+//   NGOPERMISSION.findOne({registrationid:id}, (err,data)=>{
+//       res.render('portfolio.hbs',{
+//           data
+//       })
+//   })
+// })
+
 
 
 
