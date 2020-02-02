@@ -148,7 +148,10 @@
                         <a href="#portfolio" ><i><i class="fa fa-check-circle"></i></i>PERMISSIONS</a>
                     </li>    
                     <li class="tmenu">    
-                        <a href="#contact" ><i><i class="fa fa-envelope"></i></i>INBOX</a>
+                        <a href="#contact" ><i><i class="fa fa-envelope"></i></i>HISTORY</a>
+                    </li>
+                    <li class="tmenu">    
+                        <a href="#cen" ><i><i class="fa fa-envelope"></i></i>INBOX</a>
                     </li>
                 </ul>
             </nav>
@@ -380,9 +383,13 @@
                            <li><span class="text-color">Date Of Organizing</span>
                             {{ngo.date}}
                             </li>
+                            <li><span class="text-color">Budget</span>
+                            {{ngo.budget}}
+                            </li>
                             <li><span class="text-color">No. Of Completed Projects</span>
                             {{ngo.projects}}
                             </li>
+                            
                         </ul>
                      </div>
                      <div class="ex-box container" style="margin-bottom:5%;">
@@ -473,11 +480,18 @@
             <input type="date" class="form-control input100" name="date">
             <span class="focus-input100"></span>
           </div> --}}
+
+          <div class="form-group wrap-input100 validate-input m-b-23">
+            <label for="other-organizing" class="col-form-label label-input100">Budget</label>
+            <input type="text" class="form-control input100" name="budget">
+            <span class="focus-input100"></span>
+          </div>
           <div class="form-group wrap-input100 validate-input m-b-23">
             <label for="other-organizing" class="col-form-label label-input100">Number of Projects Completed</label>
             <input type="number" class="form-control input100" name="projects">
             <span class="focus-input100"></span>
           </div>
+          
     <div class="btn-center">
           <button type="submit" class="btn send-style">Save</button>
     </div>
@@ -498,13 +512,301 @@
            </section>
 
 
-            <section id="contact">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. A unde fugit excepturi ad porro harum! Tempora vitae, cupiditate quisquam suscipit culpa molestiae excepturi ad nam atque, enim esse qui nulla error sed, minus harum! Ex eum laborum amet sunt. Eligendi corporis eveniet iusto dolore maiores. At facere vero quae modi!
-            </section>
+             <section id="contact">
+                <div class="timeline-section">
+                      <div class="main-wrapper-resume">  
+         <div class="carttitle-wrapper">
+            <div class="color-box">
+               <button id="red-color" class="btn-style"></button>
+               <button id="yellow-color" class="btn-style"></button>
+               <button id="blue-color" class="btn-style"></button>
+               <button id="green-color" class="btn-style"></button>
+               <button class="setting-icon "><i class="fa fa-cog fa-spin" aria-hidden="true"></i></button>
+            </div>
+            <div class="container no-padding">
+               <div class="row no-margin">
+                  <div class="col-md-12 no-padding bg-color-left">
+                     <div class="left-name bg-color-1">
+                        <h2>{{ngo.name}}</h2>
+                        <h5>HISTORY</h5>
+                     </div>
+                     <div class="left-address">
+                        <ul>
+                            <li><span class="text-color">Registration Id</span>{{ngo.registrationid}}</li>
+                            <li><span class="text-color">Name Of the NGO</span>{{ngo.name}}</li>
+                           <li><span class="text-color">Mobile Number</span>{{ngo.phone}}</li>
+                           
+                           <li><span class="text-color">EMAIL ID</span>{{ngo.emailid}}</li>
+                        </ul>
+                     </div>
+                     <div class="ex-heading loader">
+                         <h2 style="letter-spacing:1px;">Date Of Organizing<span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
+                          <span style="font-size:1.1rem;">
+                            {{ngo.date}}</span>
+                          </h2>
+                     </div>
+                     <div class="container">
+                      <div class="row">
+                     <div class="left-address col-md-9"  style="padding-right:3%;">
+                        <ul>
+                            <li  id="organizedetails"><span class="text-color">Organize</span>
+                            {{ngo.organize}}
+                            </li>
+                            <li id="otherorganizedetails" style="display: none;"><span class="text-color">Organize other details</span>
+                            {{ngo.otherorganize}}
+                            </li>
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li>
+                           <!-- <li><span class="text-color">Date Of Organizing</span>
+                            {{ngo.date}}
+                            </li> -->
+                            
+                            <li><span class="text-color">Budget</span>
+                            {{ngo.budget}}
+                            </li>
+                        </ul>
+                     </div>
+                   </div>
+                 </div>
+                     <div class="ex-box container col-md-3" style="margin-bottom:5%;">
+                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                      <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
+                    </div>
+                   <div class="ex-heading loader">
+                         <h2 style="letter-spacing:1px;">Date Of Organizing<span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
+                          <span style="font-size:1.1rem;">
+                            {{ngo.date}}</span>
+                          </h2>
+                     </div>
+                     <div class="container">
+                      <div class="row">
+                     <div class="left-address col-md-9"  style="padding-right:3%;">
+                        <ul>
+                            <li  id="organizedetails"><span class="text-color">Organize</span>
+                            {{ngo.organize}}
+                            </li>
+                            <li id="otherorganizedetails" style="display: none;"><span class="text-color">Organize other details</span>
+                            {{ngo.otherorganize}}
+                            </li>
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li>
+                           <!-- <li><span class="text-color">Date Of Organizing</span>
+                            {{ngo.date}}
+                            </li> -->
+                            
+                            <li><span class="text-color">Budget</span>
+                            {{ngo.budget}}
+                            </li>
+                        </ul>
+                     </div>
+                     </div>
+                </div>
+                     <div class="ex-box container col-md-3" style="margin-bottom:5%;">
+                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                      <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
+                    </div>
+                 
+                      <div class="ex-heading loader">
+                         <h2 style="letter-spacing:1px;">Date Of Organizing<span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
+                          <span style="font-size:1.1rem;">
+                            {{ngo.date}}</span>
+                          </h2>
+                     </div>
+                     <div class="container">
+                      <div class="row">
+                     <div class="left-address col-md-9"  style="padding-right:3%;">
+                        <ul>
+                            <li  id="organizedetails"><span class="text-color">Organize</span>
+                            {{ngo.organize}}
+                            </li>
+                            <li id="otherorganizedetails" style="display: none;"><span class="text-color">Organize other details</span>
+                            {{ngo.otherorganize}}
+                            </li>
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li>
+                           <!-- <li><span class="text-color">Date Of Organizing</span>
+                            {{ngo.date}}
+                            </li> -->
+                            
+                            <li><span class="text-color">Budget</span>
+                            {{ngo.budget}}
+                            </li>
+                        </ul>
+                     </div>
+                    </div>
+                </div>
+                     <div class="ex-box container col-md-3" style="margin-bottom:5%;">
+                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                      <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
+                    </div>
+                  </div>
+                </div>
+                  </div>
+              </div>
+                  </div>
+               </div>
         
         </section>
 
-        
+        <section id="cen">
+                <div class="timeline-section">
+                      <div class="main-wrapper-resume">  
+         <div class="carttitle-wrapper">
+            <div class="color-box">
+               <button id="red-color" class="btn-style"></button>
+               <button id="yellow-color" class="btn-style"></button>
+               <button id="blue-color" class="btn-style"></button>
+               <button id="green-color" class="btn-style"></button>
+               <button class="setting-icon "><i class="fa fa-cog fa-spin" aria-hidden="true"></i></button>
+            </div>
+            <div class="container no-padding">
+               <div class="row no-margin">
+                  <div class="col-md-12 no-padding bg-color-left">
+                     <div class="left-name bg-color-1">
+                        <h2>{{ngo.name}}</h2>
+                        <h5>INBOX</h5>
+                     </div>
+                     <div class="left-address">
+                        <ul>
+                            <li><span class="text-color">Registration Id</span>{{ngo.registrationid}}</li>
+                            <li><span class="text-color">Name Of the NGO</span>{{ngo.name}}</li>
+                           <li><span class="text-color">Mobile Number</span>{{ngo.phone}}</li>
+                           
+                           <li><span class="text-color">EMAIL ID</span>{{ngo.emailid}}</li>
+                        </ul>
+                     </div>
+                     <div class="ex-heading loader">
+                         <h2 style="letter-spacing:1px;">1.<!-- <span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
+                          <span style="font-size:1.1rem;">
+                            {{ngo.date}}</span> -->
+                          </h2>
+                     </div>
+                     <div class="container">
+                      <div class="row">
+                     <div class="left-address col-md-9"  style="padding-right:3%;">
+                        <ul>
+                            <li  id="organizedetails"><span class="text-color">Organize</span>
+                            {{ngo.organize}}
+                            </li>
+                            <li id="otherorganizedetails" style="display: none;"><span class="text-color">Organize other details</span>
+                            {{ngo.otherorganize}}
+                            </li>
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li>
+                           <!-- <li><span class="text-color">Date Of Organizing</span>
+                            {{ngo.date}}
+                            </li> -->
+                            
+                            <li><span class="text-color">Budget</span>
+                            {{ngo.budget}}
+                            </li>
+                        </ul>
+                     </div>
+                    </div>
+                </div>
+                    <div class="ex-box container col-md-3" style="margin-bottom:5%;">
+                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                      <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
+                    </div>
+                  <div class="ex-heading loader">
+                        <h2 style="letter-spacing:1px;">Date Of Organizing<span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
+                          <span style="font-size:1.1rem;">
+                            {{ngo.date}}</span>
+                          </h2>
+                     </div>
+                     <div class="container">
+                      <div class="row">
+                     <div class="left-address col-md-9"  style="padding-right:3%;">
+                        <ul>
+                            <li  id="organizedetails"><span class="text-color">Organize</span>
+                            {{ngo.organize}}
+                            </li>
+                            <li id="otherorganizedetails" style="display: none;"><span class="text-color">Organize other details</span>
+                            {{ngo.otherorganize}}
+                            </li>
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li>
+                           <!-- <li><span class="text-color">Date Of Organizing</span>
+                            {{ngo.date}}
+                            </li> -->
+                            
+                            <li><span class="text-color">Budget</span>
+                            {{ngo.budget}}
+                            </li>
+                        </ul>
+                     </div>
+                     </div>
+                </div>
+                     <div class="ex-box container col-md-3" style="margin-bottom:5%;">
+                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                      <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
+                    </div>
+                  <div class="ex-heading loader">
+                        <h2 style="letter-spacing:1px;">Date Of Organizing<span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
+                          <span style="font-size:1.1rem;">
+                            {{ngo.date}}</span>
+                          </h2>
+                     </div>
+                     <div class="container">
+                      <div class="row">
+                     <div class="left-address col-md-9"  style="padding-right:3%;">
+                        <ul>
+                            <li  id="organizedetails"><span class="text-color">Organize</span>
+                            {{ngo.organize}}
+                            </li>
+                            <li id="otherorganizedetails" style="display: none;"><span class="text-color">Organize other details</span>
+                            {{ngo.otherorganize}}
+                            </li>
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li>
+                           <!-- <li><span class="text-color">Date Of Organizing</span>
+                            {{ngo.date}}
+                            </li> -->
+                            
+                            <li><span class="text-color">Budget</span>
+                            {{ngo.budget}}
+                            </li>
+                        </ul>
+                     </div>
+                 </div>
+                </div>
+                     <div class="ex-box container col-md-3" style="margin-bottom:5%;">
+                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                      <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
+                    </div>
+                  <div class="ex-heading loader">
+                         <h2 style="letter-spacing:1px;">Date Of Organizing<span style="top: 0.8vh;font-size: 2rem;position: relative;">&#x02014;</span>
+                          <span style="font-size:1.1rem;">
+                            {{ngo.date}}</span>
+                          </h2>
+                     </div>
+                     <div class="container">
+                      <div class="row">
+                     <div class="left-address col-md-9"  style="padding-right:3%;">
+                        <ul>
+                            <li  id="organizedetails"><span class="text-color">Organize</span>
+                            {{ngo.organize}}
+                            </li>
+                            <li id="otherorganizedetails" style="display: none;"><span class="text-color">Organize other details</span>
+                            {{ngo.otherorganize}}
+                            </li>
+                           <li style="margin-left:14vw;"><span class="text-color" style="margin-left:-14vw;">Project Proposal</span>{{ngo.reasons}}</li>
+                           <!-- <li><span class="text-color">Date Of Organizing</span>
+                            {{ngo.date}}
+                            </li> -->
+                            <li><span class="text-color">Budget</span>
+                            {{ngo.budget}}
+                            </li>
+                        </ul>
+                     </div>
+                    </div>
+                </div>
+                     <div class="ex-box container col-md-3" style="margin-bottom:5%;">
+                      <button type="button" class="btn send-style btn-center">Accepted</button>
+                      <!-- <button type="button" class="btn send-style btn-center" style="margin-top:3%;">Rejected</button> -->
+                    </div>
+             
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+           </section>
 
 
 

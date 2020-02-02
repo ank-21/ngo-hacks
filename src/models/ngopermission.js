@@ -22,6 +22,9 @@ const ngopermissionSchema = new mongoose.Schema({
             }
         }
     },
+    budget:{
+        type:String
+    },
     directorname:{
         type:String
     },

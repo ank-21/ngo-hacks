@@ -9,19 +9,23 @@ mongoose.connect('mongodb://localhost:27017/NMS',{
     useUnifiedTopology:true
 });
 
-const router = require('./routers/router')
+const router = require('./routers/router');
+const govrouter = require('./routers/govrouter');
 
-const app = express() 
+const app = express();
 app.use(express.json())
 
 app.use(bodyParser.urlencoded({
     extended:true
 }))
+
 app.use(bodyParser.json())
 
 const publicDirectoryPath = path.join(__dirname,'../public')
 
 app.set('view engine','hbs');
+app.set('view engine','ejs');
+
 app.set('views',path.join(__dirname,'../template/views'));
 
 app.use(express.static(publicDirectoryPath))
@@ -30,7 +34,8 @@ app.use(express.static(publicDirectoryPath))
 
 const port = process.env.PORT || 3000;
 
-app.use('/ngo',router)
+app.use('/ngo',router);
+app.use('/gov',govrouter);
 
 
 
