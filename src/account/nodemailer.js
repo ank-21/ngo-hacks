@@ -42,6 +42,44 @@ var transporter = nodemailer.createTransport({
   });
 }
 
+const sendEmailToNgoForAcceptance = ({data}) => {  
+  var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: keys.auth.email,           //email id
+        pass: keys.auth.pass           //my gmail password
+      },
+      pool: true
+    });
+    
+    var mailOptions = {
+      from: permission.emailid,
+      to: keys.auth.govtemail,
+      subject:`Acceptance for the response of NGO for ${permission.category}`,
+      html:`<p>Registration Id : ${permission.registrationid}</p>
+            <p>Name of the NGO : ${permission.name}</p>
+            <p>Project Proposals : ${permission.reason}</p>
+            <p>Organize : ${permission.organize}</p>
+            <p>Email Id : ${permission.emailid}</p>
+            <p>Board of Director Name : ${permission.directorname}</p>
+            <p>Gender : ${permission.gender}</p>
+            <p>Address of office : ${permission.address}</p>
+            <p>State : ${permission.state}</p>
+            <p>Years Operated : ${permission.years}</p>
+            <p>No. of people associated : ${permission.people}</p>
+            <p>Date : ${permission.date}</p>`
+    };
+    console.log("mailOptions : " ,mailOptions);
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+  }
+
 
 // const sendByeEmail = (applicationNo, visitorName , PhoneNumber , checkInTime, checkOutTime, hostName,visitorEmail,hostAddress) => {
 //   var transporter = nodemailer.createTransport({
@@ -71,5 +109,6 @@ var transporter = nodemailer.createTransport({
 //   }
 
 module.exports = {
-    sendEmailToGovt
+    sendEmailToGovt,
+    sendEmailToNgoForAcceptance
 }
