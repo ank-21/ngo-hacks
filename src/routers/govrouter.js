@@ -11,7 +11,7 @@ const govfund = require('../models/govfund');
 
 
 govrouter.get('',auth,(req,res)=> {
-    res.render("signIn.ejs");
+    res.render("index.ejs");
 })
 
 govrouter.get('/requests',auth, (req,res)=> {
@@ -22,6 +22,10 @@ govrouter.get('/requests',auth, (req,res)=> {
     })
 })
 
+govrouter.get('/acceptrequest',auth, (req,res)=>{
+
+})
+
 govrouter.get('/funds',auth,(req,res)=>{
     NGOPERMISSION.find((err,data)=>{        
         res.render('funds.ejs',{
@@ -30,18 +34,6 @@ govrouter.get('/funds',auth,(req,res)=>{
     })
 })
 
-govrouter.post('/funds',auth, async(req,res)=>{
-    console.log(req.body);
-    const fund = new govfund(req.body);
-  
-  try {
-    await fund.save();
-    res.render("funds.ejs");
-    
-  } catch (error) {
-    res.send(error)
-  }
-})
     
 
 govrouter.get('/invite',auth,(req,res)=>{
