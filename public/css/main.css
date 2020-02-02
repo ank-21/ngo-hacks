@@ -268,11 +268,11 @@ button:hover {
 .form-box{
   position:relative;
   overflow-x:hidden;
-  height:100vh;
+  height:120vh;
 }
 @media (max-width:360px){
 .form-box{
-  height:120vh;
+  height:135vh;
 }
 }
 .in{

@@ -3,11 +3,11 @@ const moment = require('moment');
 // const passport = require('passport');
 const govrouter = express.Router();
 const auth = require('../middleware/auth');
-const {sendEmailToGovt} = require('../account/nodemailer');
+const {sendEmailToNgoForAcceptance} = require('../account/nodemailer');
 //const {sendWelcomeMessage} = require('../account/send_sms');
 const NGOPERMISSION = require('../models/ngopermission');
 const jwt = require('jsonwebtoken');
-const govfund = require('../models/govfund');
+const GOVFUND = require('../models/govfund');
 
 
 govrouter.get('',auth,(req,res)=> {
@@ -22,9 +22,7 @@ govrouter.get('/requests',auth, (req,res)=> {
     })
 })
 
-govrouter.get('/acceptrequest',auth, (req,res)=>{
 
-})
 
 govrouter.get('/funds',auth,(req,res)=>{
     NGOPERMISSION.find((err,data)=>{        
@@ -41,6 +39,15 @@ govrouter.get('/invite',auth,(req,res)=>{
         res.render('invite.ejs',{
             data
         })
+    })
+})
+
+govrouter.get('/acceptrequest/:id',auth, (req,res)=>{
+    const id = req.params.id;
+    NGOPERMISSION.findOne({registrationid:id}, (err,data)=>{
+        console.log("data",data);
+        
+        sendEmailToNgoForAcceptance({data});
     })
 })
 
