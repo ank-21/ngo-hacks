@@ -7,6 +7,8 @@ const {sendEmailToGovt} = require('../account/nodemailer');
 const NGO = require('../models/ngo');
 const NGODETAILS = require('../models/ngodetails');
 const NGOPERMISSION = require('../models/ngopermission');
+const authngo = require('../middleware/authngo');
+const jwt=require("jsonwebtoken");
 
 // const initializePassport = require('./passport-config')
 
@@ -19,6 +21,8 @@ router.post('/signup', async(req,res)=> {
     console.log(req.body);
     const ngo = new NGO(req.body);
     try {
+      var token = jwt.sign({ password: req.body.password}, 'shhhhh');
+      localStorage.setItem('ngotoken',token);
             await ngo.save();
             console.log("list",ngo);
             res.render("portfolio.hbs",{
@@ -28,8 +32,13 @@ router.post('/signup', async(req,res)=> {
         res.render("error.hbs");
     }
 })
+router.get("/logout",(req,res)=>{
+  localStorage.removeItem("token");
+  res.redirect("/");
+})
 
-router.post('/details', async(req,res)=>{
+
+router.post('/details',authngo,async(req,res)=>{
   console.log("modal: ",req.body);
   const details = new NGODETAILS(req.body);
   console.log("details-b4",details);
@@ -47,7 +56,7 @@ router.post('/details', async(req,res)=>{
   }
 })
 
-router.post('/permission', async(req,res)=> {
+router.post('/permission',authngo,async(req,res)=> {
   const permission = new NGOPERMISSION(req.body);
   permission.registrationid = 'REG'+Date.now();
   permission.date = moment().format("MMM Do YYYY");
