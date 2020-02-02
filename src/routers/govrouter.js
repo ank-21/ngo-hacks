@@ -47,7 +47,16 @@ govrouter.get('/acceptrequest/:id',auth, (req,res)=>{
     NGOPERMISSION.findOne({registrationid:id}, (err,data)=>{
         console.log("data",data);
         
-        sendEmailToNgoForAcceptance({data});
+        //sendEmailToNgoForAcceptance({data});
+    })
+})
+
+govrouter.get('/declinerequest/:id',auth, (req,res)=>{
+    const id = req.params.id;
+    NGOPERMISSION.findOne({registrationid:id}, (err,data)=>{
+        console.log("data",data);
+        
+        //sendEmailToNgoForAcceptance({data});
     })
 })
 

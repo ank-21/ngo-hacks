@@ -69,7 +69,10 @@ const ngopermissionSchema = new mongoose.Schema({
     },
     links:[{
         type:String
-    }]
+    }],
+    message:{
+        type:String
+    }
 })
 
 
