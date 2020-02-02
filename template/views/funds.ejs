@@ -130,15 +130,12 @@
         </nav>
         <div class="sideNav">
             <div class="iconHolder">
-                <div class="sideIcons"><a href="/gov"><i class="fa fa-home" aria-hidden="true"></i></a></div>
-                <div class="sideIcons"><a href="/gov/ngo/all"><i class="fa fa-users" aria-hidden="true"></i></a></div>
-                <div class="sideIcons"><a href="/gov/requests"><i class="fa fa-handshake-o" aria-hidden="true"></i></a>
-                </div>
-                <div class="sideIcons"><a href="/gov/funds"><i class="fa fa-money" aria-hidden="true"></i></a></div>
-                <div class="sideIcons"><a href="/gov/invite"><i class="fa  fa-location-arrow"
-                            aria-hidden="true"></i></a></div>
-            </div>
-        </div>
+            <div class="sideIcons"><a href="/gov" data-toggle="tooltip" data-placement="right" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a></div>
+            <div class="sideIcons"><a href="/gov/ngo/all" data-toggle="tooltip" data-placement="right" title="All NGOs"><i class="fa fa-users" aria-hidden="true"></i></a></div>
+            <div class="sideIcons"><a href="/gov/requests" data-toggle="tooltip" data-placement="right" title="NGO Requests"><i class="fa fa-handshake-o" aria-hidden="true"></i></a></div>
+            <div class="sideIcons"><a href="/gov/funds" data-toggle="tooltip" data-placement="right" title="Funding"><i class="fa fa-money" aria-hidden="true"></i></a></div>
+            <div class="sideIcons"><a href="/gov/invite" data-toggle="tooltip" data-placement="right" title="Invitations"><i class="fa  fa-location-arrow" aria-hidden="true"></i></a></div>
+        </div></div>
         <div class="tableContainer">
             <h2 style="text-align: center;margin-bottom: 50px; font-size: 50px;font-weight: bold;">Provide Funding</h2>
             <div class="search-sort-box">
@@ -386,6 +383,11 @@
             }
         }
     </script>
+      <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
 </body>
 
 </html>
